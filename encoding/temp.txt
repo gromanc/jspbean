@@ -1,0 +1,12 @@
+ServletActionContext.getRequest()
+ServletActionContext.getRequest()
+
+application/x-www-form-urlencoded
+
+
+getBytes("ISO-8859-1")
+
+-Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8 -Dsun.io.unicode.encoding=UTF-8 -Duser.language=fr -Duser.country=FR
+
+BF C3 A9
+93 C2 A9

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="build" name="Web Module">
+
+  <property name="module.dir" value="C:/Workspaces/tests/jspbean"/>
+  <property name="lib.dir" value="${module.dir}/lib"/>
+  <property name="source.dir" value="${module.dir}/src"/>
+  <property name="gensrc.dir" value="${module.dir}/gensrc"/>
+  <property name="resources.dir" value="${module.dir}/resources"/>
+  <property name="web.inf.dir" value="${module.dir}/web/WEB-INF"/>
+  <property name="classes.dir" value="${module.dir}/out/production/jspbean"/>
+  <property name="exploded.dir" value="${module.dir}/out/artifacts/exploded"/>
+  <property name="war.dir" value="${module.dir}/classes/artifacts/war"/>
+  <property name="deploy.dir" value="${module.dir}/deploy"/>
+
+
+
+  <path id="compile.classpath">
+    <fileset dir="${lib.dir}">
+      <include name="**/*.jar"/>
+      <include name="**/**/*.jar"/>
+    </fileset>
+  </path>
+
+  <patternset id="compiler.resources">
+    <include name="**/?*.properties"/>
+    <include name="**/?*.xml"/>
+    <include name="**/?*.gif"/>
+    <include name="**/?*.dtd"/>
+    <include name="**/?*.tld"/>
+  </patternset>
+
+  <target name="clean">
+    <delete dir="${exploded.dir}"/>
+    <delete dir="${web.inf.dir}/classes"/>
+  </target>
+
+  <target name="native2ascii">
+    <delete dir="${classes.dir}/jspbean/struts/resources" includes="*.properties" />
+    <native2ascii encoding="cp1251" src="${source.dir}/jspbean/struts/resources" dest="${classes.dir}/jspbean/struts/resources" includes="*.properties" />
+    <copy todir="${exploded.dir}/WEB-INF/classes/jspbean/struts/resources">
+      <fileset dir="${classes.dir}/jspbean/struts/resources" includes="*.properties" />
+    </copy>
+  </target>
+
+  <target name="ascii2native">
+    <native2ascii  encoding="cp1251" src="${classes.dir}/jspbean/struts/resources" dest="${resources.dir}"  includes="*.properties" reverse="true"/>
+  </target>
+
+  <target name="build" depends="clean">
+    <mkdir dir="${exploded.dir}"/>
+    <mkdir dir="${web.inf.dir}/classes"/>
+
+    <antcall target="native2ascii"/>
+
+    <javac srcdir="${source.dir}" destdir="${web.inf.dir}/classes" debug="on">
+      <classpath refid="compile.classpath"/>
+    </javac>
+    <copy todir="${web.inf.dir}/classes">
+      <fileset dir="${source.dir}">
+        <exclude name="**/*.java"/>
+      </fileset>
+    </copy>
+
+    <copy todir="${exploded.dir}">
+      <fileset dir="${module.dir}/web" excludes="build.xml,*.iml,dist/**,WEB-INF/**,__exploded/**,exploded/**" />
+    </copy>
+
+    <copy todir="${exploded.dir}/WEB-INF">
+      <fileset dir="${web.inf.dir}/WEB-INF" excludes="src/**,classes/**,resources/**" />
+    </copy>
+
+  </target>
+
+  <target name="make_distributive" depends="clean">
+    <mkdir dir="${war.dir}"/>
+    <mkdir dir="${exploded.dir}/WEB-INF/classes"/>
+
+    <antcall target="native2ascii"/>
+
+    <javac srcdir="${source.dir}" destdir="${exploded.dir}/WEB-INF/classes">
+      <classpath refid="compile.classpath"/>
+    </javac>
+    <copy todir="${exploded.dir}/classes">
+      <fileset dir="${source.dir}">
+        <exclude name="**/*.java"/>
+      </fileset>
+    </copy>
+
+    <copy todir="${exploded.dir}">
+      <fileset dir="${module.dir}/web" excludes="build.xml,*.iml,dist/**,WEB-INF/**,__exploded/**,exploded/**">
+      </fileset>
+    </copy>
+
+    <mkdir dir="${exploded.dir}/WEB-INF"/>
+    <copy todir="${exploded.dir}/WEB-INF">
+      <fileset dir="${module.dir}/WEB-INF" excludes="src/**,classes/**,resources/**">
+      </fileset>
+    </copy>
+
+    <war destfile="${war.dir}/jspbean.war"
+         webxml="${web.inf.dir}/web.xml">
+      <fileset dir="${exploded.dir}"/>
+      <classes dir="${exploded.dir}/WEB-INF/classes"/>
+    </war>
+  </target>
+
+  <target name="deploy" depends="build">
+    <copy file="${war.dir}/jspbean.war"
+          todir="${deploy.dir}"/>
+  </target>
+</project>

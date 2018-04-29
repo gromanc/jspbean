@@ -1,0 +1,78 @@
+package jspbean.struts;
+
+import com.opensymphony.xwork2.ActionSupport;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.Result;
+
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
+@Namespace("/")
+@Action(value="", results={
+  @Result(type="redirect", location = "/default.jsp", params = {"inputFr", "${content}"})
+})
+public class DefaultAction extends ActionSupport {
+  private final static Log log =   LogFactory.getLog(DefaultAction.class);
+
+  private String content = "médiévaux, principalement pour l’anglais et le français";
+  private String content2;
+
+  public String getContent() {
+    try {
+      return URLEncoder.encode(content, "UTF-8");
+    } catch (UnsupportedEncodingException e) {
+      e.printStackTrace();
+    }
+    return null;
+  }
+
+  public void setContent(String content) {
+    this.content = content;
+  }
+//  private UserDAO userDAO;
+
+//  public void setUserDAO(UserDAO userDAO) {
+//    this.userDAO = userDAO;
+//  }
+
+
+  public String getContent2() {
+    return content2;
+  }
+
+  public void setContent2(String content2) {
+    this.content2 = content2;
+  }
+
+  @Override
+  public String execute(){
+//   List userList = userDAO.findAll();
+//    PrintWriter out = response.getWriter();
+//    System.setProperty("file.encoding", "UTF-8");
+    System.out.println(content);
+    String content3 = null;
+      content3 = "médiévaux, principalement pour l’anglais et le français";
+    System.out.println(content3);
+    try {
+      System.out.println(new String(content.getBytes("UTF8"), "UTF-8"));
+    } catch (UnsupportedEncodingException e) {
+      e.printStackTrace();  //Todo change body of catch statement.
+    }
+    log.info("content3=" + content3);
+    return SUCCESS;
+  }
+
+  public String save(){
+    System.out.println(content2);
+    try {
+      System.out.println(new String(content2.getBytes("UTF8"), "UTF-8"));
+    } catch (UnsupportedEncodingException e) {
+      e.printStackTrace();  //Todo change body of catch statement.
+    }
+
+    return SUCCESS;
+  }
+}

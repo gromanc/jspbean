@@ -1,0 +1,5 @@
+ul.breadcrumb-navigation {padding-top:4px;}
+
+ul.breadcrumb-navigation li {display:inline; padding:0 15px 0 10px; background:url(/bitrix/templates/kiev/images/icons/orangearrow.gif) no-repeat 0 6px;}
+
+ul.breadcrumb-navigation a {color:#ff9900;}

@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <title>java - How to redirect all console output to a Swing JTextArea/JTextPane with the right encoding? - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico">
+    <link rel="apple-touch-icon" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="/opensearch.xml">
+
+    
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdn.sstatic.net/js/stub.js?v=f9ed0fdfae3d"></script>
+    <link rel="stylesheet" type="text/css" href="http://cdn.sstatic.net/stackoverflow/all.css?v=62cb6469d450">
+    
+    <meta name="relativepagescore" content="116651">
+    <link rel="canonical" href="http://stackoverflow.com/questions/1522444/how-to-redirect-all-console-output-to-a-swing-jtextarea-jtextpane-with-the-right">
+    <link rel="alternate" type="application/atom+xml" title="Feed for question 'How to redirect all console output to a Swing JTextArea/JTextPane with the right encoding?'" href="/feeds/question/1522444">
+    <script type="text/javascript">
+        
+        StackExchange.ready(function () {
+            
+            StackExchange.question.init({canOpenBounty:true,votesCast:[],canViewVoteCounts:true,totalCommentCount:2,shownCommentCount:2,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:1522444});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('1', '1522444');
+            
+                
+        });
+    </script>
+
+
+        <script type="text/javascript">
+             StackExchange.ready(function () {
+                 StackExchange.realtime.init('ws://sockets-se.or.stackexchange.com:80');
+                StackExchange.realtime.subscribeToInboxNotifications();
+                                 StackExchange.realtime.subscribeToReputationNotifications('1');            
+                         });
+        </script>
+    <script type="text/javascript">
+        StackExchange.init({"stackAuthUrl":"https://stackauth.com","serverTime":1360065342,"styleCode":true,"enableUserHovercards":true,"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","enableSocialMediaInSharePopup":true},"user":{"fkey":"a1c2a9ad0c2eaa9f5b8424ea893728da","isRegistered":true,"userId":573032,"accountId":698222,"gravatar":"<div class=\"\"><img src=\"http://www.gravatar.com/avatar/bca617231294691f95f0e9f0ee623630?s=32&d=identicon&r=PG\" alt=\"\" width=\"32\" height=\"32\"></div>","profileUrl":"http://stackoverflow.com/users/573032/roman-c","notificationsUnviewedCount":0,"inboxUnviewedCount":0}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.js":"c862bf93b3ec","js/moderator.js":"53a4fbf22d01","js/full-anon.js":"1dda421a303f","js/full.js":"bbd049c5bad6","js/wmd.js":"fd5b31f81840","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/mobile.js":"6eb68240242f","js/help.js":"fc9fb0517db2","js/tageditor.js":"450c9e8426fc","js/tageditornew.js":"f12653fbfd29","js/inline-tag-editing.js":"30f72b99548b","js/revisions.js":"7273bb714bba","js/review.js":"8c05e24ebaa2","js/tagsuggestions.js":"c019341b234d"});
+        
+    </script>
+
+
+    <script type="text/javascript">
+        StackExchange.using(
+            "gps",
+            function () {
+                StackExchange.gps.init(false);
+            }
+        );
+    </script>
+
+</head>
+<body class="question-page">
+    <noscript><div id="noscript-padding"></div></noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+    <div class="container">
+        <div id="header">
+            <div id="portalLink">
+                <a class="genu" href="http://stackexchange.com" onclick="StackExchange.ready(function(){genuwine.click();});return false;">Stack Exchange</a>
+            </div>
+            <div id="topbar">
+                <div id="hlinks">
+                    
+
+
+
+
+
+
+
+
+
+<span id="hlinks-user">
+        <span class="profile-triangle">&#9662;</span><a href="/users/573032/roman-c" class="profile-link">Roman C</a>&nbsp;<a href="/users/573032/roman-c?tab=reputation"><span class="reputation-score" title="your reputation; view reputation changes" dir="ltr">2,742</span></a><span title="4 gold badges"><span class="badge1"></span><span class="badgecount">4</span></span><span title="9 silver badges"><span class="badge2"></span><span class="badgecount">9</span></span><span title="19 bronze badges"><span class="badge3"></span><span class="badgecount">19</span></span>
+ <span class="lsep">|</span>
+
+
+</span>
+<span id="hlinks-nav">
+                        <a href="/review/">review</a>
+
+ <span class="lsep">|</span>
+
+</span>
+<span id="hlinks-custom">
+        <a href="http://chat.stackoverflow.com">chat</a>
+
+ <span class="lsep">|</span>
+            <a href="http://meta.stackoverflow.com">meta</a>
+
+ <span class="lsep">|</span>
+        <a href="/about">about</a>
+
+ <span class="lsep">|</span>
+    <a href="/faq">faq</a>
+
+</span>
+                </div>
+                <div id="hsearch">
+                    <form id="search" action="/search" method="get" autocomplete="off">
+                    <div>
+                        <input autocomplete="off" name="q" class="textbox" placeholder="search" tabindex="1" type="text" maxlength="240" size="28" value="">
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="/" >Stack Overflow</a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="/tags">Tags</a></li>
+                        <li><a id="nav-users" href="/users">Users</a></li>
+                        <li><a id="nav-badges" href="/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion"  href="/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        
+
+
+
+        <div id="content">
+            
+
+<div itemscope itemtype="http://schema.org/Article">
+<link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+<div id="question-header">
+    <h1 itemprop="name"><a href="/questions/1522444/how-to-redirect-all-console-output-to-a-swing-jtextarea-jtextpane-with-the-right" class="question-hyperlink">How to redirect all console output to a Swing JTextArea/JTextPane with the right encoding?</a></h1>
+</div>
+<div id="mainbar">
+
+
+
+<div class="question" data-questionid="1522444"  id="question">
+    
+        <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" value="1522444">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear (click again to undo)">up vote</a>
+    <span class="vote-count-post ">2</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful (click again to undo)">down vote</a>
+    
+    <a class="star-off" href="#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b></b></div>   
+
+ 
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="description">
+        <p>I've been trying to redirect System.out PrintStream to a JTextPane. This works fine, except for the encoding of special locale characters. I found a lot of documentation about it (see for ex. <a href="http://mindprod.com/jgloss/encoding.html" rel="nofollow">mindprod encoding page</a>), but I'm still fighting with it. Similar questions were posted in StackOverFlow, but the encoding wasn't addressed as far as I've seen.</p>
+
+<p>First solution:</p>
+
+<pre><code>String sUtf = new String(s.getBytes("cp1252"),"UTF-8");
+</code></pre>
+
+<p>Second solution should use java.nio. I don't understand how to use the Charset.</p>
+
+<pre><code>Charset defaultCharset = Charset.defaultCharset() ;
+byte[] b = s.getBytes();
+Charset cs = Charset.forName("UTF-8");
+ByteBuffer bb = ByteBuffer.wrap( b );
+CharBuffer cb = cs.decode( bb );
+String stringUtf = cb.toString();
+myTextPane.text = stringUtf
+</code></pre>
+
+<p>Neither solution works out. Any idea?</p>
+
+<p>Thanks in advance,
+jgran</p>
+
+    </div>
+    <div class="post-taglist">
+        <a href="/questions/tagged/java" class="post-tag" title="show questions tagged 'java'" rel="tag">java</a> <a href="/questions/tagged/encoding" class="post-tag" title="show questions tagged 'encoding'" rel="tag">encoding</a> <a href="/questions/tagged/stdout" class="post-tag" title="show questions tagged 'stdout'" rel="tag">stdout</a> <a href="/questions/tagged/nio" class="post-tag" title="show questions tagged 'nio'" rel="tag">nio</a> 
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="/q/1522444/573032" title="short permalink to this question" class="short-link" id="link-post-1522444">share</a><span class="lsep">|</span><a href="/posts/1522444/edit" class="edit-post" title="revise and improve this post">edit</a><span class="lsep">|</span><a id="flag-post-1522444" href="#" title="flag this post for serious problems or moderator attention">flag</a></div>            </td>
+    <td class="post-signature owner">
+        
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                                    asked
+ <span title="2009-10-05 21:17:55Z" class="relativetime">Oct 5 '09 at 21:17</span>
+        </div>
+        <div class="user-gravatar32">
+            <span class="anonymous-gravatar"></span>
+        </div>
+        <div class="user-details">
+            jgran<br>
+            
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </table>
+</div>
+</td>
+        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-1522444" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-1385909" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span>&nbsp;</span>
+</td>
+<td>
+<a class="comment-up comment-up-off" title="this comment adds something useful to the post">upvote</a>
+</td></tr>
+<tr><td>&nbsp;</td><td><a class="comment-flag" title="flag this comment as unconstructive, offensive, or spam">flag</a></td></tr></tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">off topic question: why the two users - jgran(OP) and jgran(answerer:<a href="http://stackoverflow.com/questions/1522444/how-to-redirect-all-console-output-to-a-swing-jtextarea-jtextpane-with-the-right/1530213#1530213" title="how to redirect all console output to a swing jtextarea jtextpane with the right">stackoverflow.com/questions/1522444/&hellip;</a>)?</span> &ndash;&nbsp;<a href="/users/103043/akf" title="19446 reputation" class="comment-user">akf</a> <span class="comment-date" dir="ltr"><span title="2009-10-07 08:26:27Z" class="relativetime-clean">Oct 7 '09 at 8:26</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-1394647" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span>&nbsp;</span>
+</td>
+<td>
+<a class="comment-up comment-up-off" title="this comment adds something useful to the post">upvote</a>
+</td></tr>
+<tr><td>&nbsp;</td><td><a class="comment-flag" title="flag this comment as unconstructive, offensive, or spam">flag</a></td></tr></tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">My mistake... should have the FAQ more seriously. So the same user!</span> &ndash;&nbsp;<span class="comment-user">jgran</span> <span class="comment-date" dir="ltr"><span title="2009-10-08 15:14:47Z" class="relativetime-clean">Oct 8 '09 at 15:14</span></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        <tfoot>
+            <tr>
+                <td></td>
+                <td class="comment-form"><form id="add-comment-1522444"></form></td>
+            </tr>
+        </tfoot>
+    
+        </table>
+    </div>
+    <a id="comments-link-1522444" class="comments-link" data-comments-count="0" title="ask author for clarification about this post">add comment</a>
+    
+</td>
+</tr>                  <tr class="bounty-notification">
+          <td class="votecell"></td>
+          <td>
+          <div style="margin-top:20px">
+            <a class="bounty-link bounty" title="offer some of your reputation for better answers">
+                start a bounty
+            </a>
+          </div>
+          </td>
+          </tr>
+    </table>    
+</div>
+
+
+    
+
+
+<div id="answers">
+
+    <a name="tab-top"></a>
+    <div id="answers-header">
+        <div class="subheader answers-subheader">
+            <h2>
+                    5 Answers
+            </h2>
+            <div id="tabs">
+                <a href="/questions/1522444/how-to-redirect-all-console-output-to-a-swing-jtextarea-jtextpane-with-the-right?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+<a href="/questions/1522444/how-to-redirect-all-console-output-to-a-swing-jtextarea-jtextpane-with-the-right?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+<a class="youarehere" href="/questions/1522444/how-to-redirect-all-console-output-to-a-swing-jtextarea-jtextpane-with-the-right?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+
+            </div>
+        </div>    
+    </div>    
+
+
+
+
+  
+<a name="1536005"></a>
+<div id="answer-1536005" class="answer accepted-answer" data-answerid="1536005" >
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" value="1536005">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post ">1</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+            <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+ 
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text"><p>Try this code:</p>
+
+<pre><code>public class MyOutputStream extends OutputStream {
+
+private PipedOutputStream out = new PipedOutputStream();
+private Reader reader;
+
+public MyOutputStream() throws IOException {
+    PipedInputStream in = new PipedInputStream(out);
+    reader = new InputStreamReader(in, "UTF-8");
+}
+
+public void write(int i) throws IOException {
+    out.write(i);
+}
+
+public void write(byte[] bytes, int i, int i1) throws IOException {
+    out.write(bytes, i, i1);
+}
+
+public void flush() throws IOException {
+    if (reader.ready()) {
+        char[] chars = new char[1024];
+        int n = reader.read(chars);
+
+        // this is your text
+        String txt = new String(chars, 0, n);
+
+        // write to System.err in this example
+        System.err.print(txt);
+    }
+}
+
+public static void main(String[] args) throws IOException {
+
+    PrintStream out = new PrintStream(new MyOutputStream(), true, "UTF-8");
+
+    System.setOut(out);
+
+    System.out.println("café résumé voilà");
+
+}
+
+}
+</code></pre>
+</div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="/a/1536005/573032" title="short permalink to this answer" class="short-link" id="link-post-1536005">share</a><span class="lsep">|</span><a href="/posts/1536005/edit" class="edit-post" title="revise and improve this post">edit</a><span class="lsep">|</span><a id="flag-post-1536005" href="#" title="flag this post for serious problems or moderator attention">flag</a></div>                    </td>
+    <td align="right" class="post-signature">
+
+
+    <div class="user-info user-hover">
+        <div class="user-action-time">
+                            edited
+                             <a href="/posts/1536005/revisions" title="show all edits to this post"><span title="2011-07-25 13:29:24Z" class="relativetime">Jul 25 '11 at 13:29</span></a>
+
+        </div>
+        <div class="user-gravatar32">
+            <a href="/users/21960/al-everett"><div class=""><img src="http://www.gravatar.com/avatar/5b4537d0b15b4f180f5556d5edbaded3?s=32&d=identicon&r=PG" alt="" width="32" height="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="/users/21960/al-everett">Al Everett</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">4,097</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="18 silver badges"><span class="badge2"></span><span class="badgecount">18</span></span><span title="33 bronze badges"><span class="badge3"></span><span class="badgecount">33</span></span>
+        </div>
+    </div>
+    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                                    answered
+ <span title="2009-10-08 06:46:59Z" class="relativetime">Oct 8 '09 at 6:46</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="/users/11662/vilmantas-baranauskas"><div class=""><img src="http://www.gravatar.com/avatar/cecb8a1f3d8a89ea8b7fb236b7b7d031?s=32&d=identicon&r=PG" alt="" width="32" height="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="/users/11662/vilmantas-baranauskas">Vilmantas Baranauskas</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">1,656</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="10 silver badges"><span class="badge2"></span><span class="badgecount">10</span></span><span title="21 bronze badges"><span class="badge3"></span><span class="badgecount">21</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-1536005" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-1397104" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span>&nbsp;</span>
+</td>
+<td>
+<a class="comment-up comment-up-off" title="this comment adds something useful to the post">upvote</a>
+</td></tr>
+<tr><td>&nbsp;</td><td><a class="comment-flag" title="flag this comment as unconstructive, offensive, or spam">flag</a></td></tr></tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">Thanks a lot for your solution which could be quickly adapted to my own problem. Regards.</span> &ndash;&nbsp;<span class="comment-user">jgran</span> <span class="comment-date" dir="ltr"><span title="2009-10-08 21:54:05Z" class="relativetime-clean">Oct 8 '09 at 21:54</span></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        <tfoot>
+            <tr>
+                <td></td>
+                <td class="comment-form"><form id="add-comment-1536005"></form></td>
+            </tr>
+        </tfoot>
+    
+        </table>
+    </div>
+    <a id="comments-link-1536005" class="comments-link" data-comments-count="0" title="ask author for clarification about this post">add comment</a>
+    
+</td>
+</tr>
+   
+    
+    </table>
+</div>
+
+  
+<a name="1522546"></a>
+<div id="answer-1522546" class="answer" data-answerid="1522546" >
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" value="1522546">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post ">0</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+ 
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text"><p>String in java does not have an encoding - Strings are backed by a character array, and character should always be utf-16 while they are treated as strings and char values. </p>
+
+<p>The encoding only comes into question when you export or import strings/chars to or from an external representation (or location). The transfer must take place using a sequence of bytes to represent the string. </p>
+
+<p>I think the first solution is close, but also totally confused. First you ask java to translate the char values to their cp1252-encoded equivalent values (the 'word'for the similarily-shaped character in the cp1252 'language'). Then you create a string from this byte sequence, stating that this sequence of cp-1252 codes is in fact a sequence of utf-8 codes and should be translated to the standard in-memory representation (utf-16) from utf-8. </p>
+
+<p>A string is never utf og cp1252 or anything like that - it is alsways characters. Only byte sequences are utf-8 or cp1252. If you want to translate char values to a utf-8 string you could use.</p>
+
+<pre><code>byte[] utfs = myString.getBytes("UTF-8");
+</code></pre>
+
+<p>Actually, I think the problem lies elsewhere, probably inside the printstream and how it prints its input. You should try to avoid converting strings and chars to/from bytes, because that is always a major source of confusion and trouble. Perhaps you must override all methods in order to capture character data before conversion. </p>
+</div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="/a/1522546/573032" title="short permalink to this answer" class="short-link" id="link-post-1522546">share</a><span class="lsep">|</span><a href="/posts/1522546/edit" class="edit-post" title="revise and improve this post">edit</a><span class="lsep">|</span><a id="flag-post-1522546" href="#" title="flag this post for serious problems or moderator attention">flag</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                                    answered
+ <span title="2009-10-05 21:38:26Z" class="relativetime">Oct 5 '09 at 21:38</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="/users/82991/eirikma"><div class=""><img src="http://www.gravatar.com/avatar/d4c720c0605e59d8cab013ad98b8d1d5?s=32&d=identicon&r=PG" alt="" width="32" height="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="/users/82991/eirikma">eirikma</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">247</span><span title="2 silver badges"><span class="badge2"></span><span class="badgecount">2</span></span><span title="7 bronze badges"><span class="badge3"></span><span class="badgecount">7</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-1522546" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        <tfoot>
+            <tr>
+                <td></td>
+                <td class="comment-form"><form id="add-comment-1522546"></form></td>
+            </tr>
+        </tfoot>
+    
+        </table>
+    </div>
+    <a id="comments-link-1522546" class="comments-link" data-comments-count="0" title="ask author for clarification about this post">add comment</a>
+    
+</td>
+</tr>
+   
+    
+    </table>
+</div>
+
+  
+<a name="1522984"></a>
+<div id="answer-1522984" class="answer" data-answerid="1522984" >
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" value="1522984">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post ">0</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+ 
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text"><p>Thank you for your help.</p>
+
+<p>Here's a small Groovy snippet which sums up the situation:</p>
+
+<pre><code>import groovy.swing.SwingBuilder
+import javax.swing.*
+import javax.swing.text.*
+
+//** originally inspired from http://unserializableone.blogspot.com/2009/01/redirecting-systemout-and-systemerr-to.html
+class JTextPaneOutputStream extends OutputStream {
+    JTextPane tp;
+    Document doc;
+
+    public JTextPaneOutputStream(JTextPane t) {
+        super();
+        tp = t;
+        doc = tp.getDocument();
+    }
+
+    public void write(int i) {
+        //*** Encoding Problem Here ??
+        String s = Character.toString((char)i);
+        //String s = String.valueOf((char) i)
+        doc.insertString(doc.length, s, null);
+        tp.setCaretPosition(doc.length -1)
+    }
+}
+def originalOutput = System.out
+def swing = new SwingBuilder()
+swing.frame(title: "hi", size: [200, 200], visible: true, pack:true){
+    panel(){
+        textPane(id: "idTextPaneStdOut", preferredSize: [200,200])
+        button(text: "click", actionPerformed: { 
+            tpos = new JTextPaneOutputStream(swing.idTextPaneStdOut)
+            newOut = new PrintStream(tpos, true, "UTF-8")
+            System.setOut(newOut)
+            println "café résumé voilà"
+        })}}
+</code></pre>
+
+<p>So how to encode String s as to make diacritic character appear nicely?
+Thanks again</p>
+
+<p>Best regards</p>
+</div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="/a/1522984/573032" title="short permalink to this answer" class="short-link" id="link-post-1522984">share</a><span class="lsep">|</span><a href="/posts/1522984/edit" class="edit-post" title="revise and improve this post">edit</a><span class="lsep">|</span><a id="flag-post-1522984" href="#" title="flag this post for serious problems or moderator attention">flag</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                                    answered
+ <span title="2009-10-05 23:54:39Z" class="relativetime">Oct 5 '09 at 23:54</span>
+        </div>
+        <div class="user-gravatar32">
+            <span class="anonymous-gravatar"></span>
+        </div>
+        <div class="user-details">
+            jgran<br>
+            
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-1522984" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        <tfoot>
+            <tr>
+                <td></td>
+                <td class="comment-form"><form id="add-comment-1522984"></form></td>
+            </tr>
+        </tfoot>
+    
+        </table>
+    </div>
+    <a id="comments-link-1522984" class="comments-link" data-comments-count="0" title="ask author for clarification about this post">add comment</a>
+    
+</td>
+</tr>
+   
+    
+    </table>
+</div>
+
+  
+<a name="1522602"></a>
+<div id="answer-1522602" class="answer" data-answerid="1522602" >
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" value="1522602">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post ">0</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+ 
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text"><p>You should create the PrintStream with the right encode: <a href="http://www.j2ee.me/j2se/1.5.0/docs/api/java/io/PrintStream.html#PrintStream(java.io.File" rel="nofollow">http://www.j2ee.me/j2se/1.5.0/docs/api/java/io/PrintStream.html#PrintStream(java.io.File</a>, java.lang.String)</p>
+
+<p>Could you please provide more code about what are you trying to do?</p>
+</div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="/a/1522602/573032" title="short permalink to this answer" class="short-link" id="link-post-1522602">share</a><span class="lsep">|</span><a href="/posts/1522602/edit" class="edit-post" title="revise and improve this post">edit</a><span class="lsep">|</span><a id="flag-post-1522602" href="#" title="flag this post for serious problems or moderator attention">flag</a></div>                    </td>
+    <td align="right" class="post-signature">
+
+
+    <div class="user-info user-hover">
+        <div class="user-action-time">
+                            edited
+                             <a href="/posts/1522602/revisions" title="show all edits to this post"><span title="2011-07-25 13:30:48Z" class="relativetime">Jul 25 '11 at 13:30</span></a>
+
+        </div>
+        <div class="user-gravatar32">
+            <a href="/users/21960/al-everett"><div class=""><img src="http://www.gravatar.com/avatar/5b4537d0b15b4f180f5556d5edbaded3?s=32&d=identicon&r=PG" alt="" width="32" height="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="/users/21960/al-everett">Al Everett</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">4,097</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="18 silver badges"><span class="badge2"></span><span class="badgecount">18</span></span><span title="33 bronze badges"><span class="badge3"></span><span class="badgecount">33</span></span>
+        </div>
+    </div>
+    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                                    answered
+ <span title="2009-10-05 21:53:23Z" class="relativetime">Oct 5 '09 at 21:53</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="/users/4600/marcospereira"><div class=""><img src="http://www.gravatar.com/avatar/7e4185110dde6d537792c300edc14e26?s=32&d=identicon&r=PG" alt="" width="32" height="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="/users/4600/marcospereira">marcospereira</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">2,777</span><span title="10 silver badges"><span class="badge2"></span><span class="badgecount">10</span></span><span title="19 bronze badges"><span class="badge3"></span><span class="badgecount">19</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-1522602" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        <tfoot>
+            <tr>
+                <td></td>
+                <td class="comment-form"><form id="add-comment-1522602"></form></td>
+            </tr>
+        </tfoot>
+    
+        </table>
+    </div>
+    <a id="comments-link-1522602" class="comments-link" data-comments-count="0" title="ask author for clarification about this post">add comment</a>
+    
+</td>
+</tr>
+   
+    
+    </table>
+</div>
+
+  
+<a name="1529189"></a>
+<div id="answer-1529189" class="answer" data-answerid="1529189" >
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" value="1529189">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post ">0</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+ 
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text"><p>As you rightfully assume the problem is most likely in:</p>
+
+<pre><code>String s = Character.toString((char)i);
+</code></pre>
+
+<p>since you encode with UTF-8, characters may be encoded with more than 1 byte and thus adding each byte you read as a character won't work.</p>
+
+<p>To make it work you can try writing all bytes into a ByteBuffer and using a CharsetDecoder (Charset.forName("UTF-8).newDecoder(), "UTF-8" to match the PrintStream) to convert them into characters which you add the panel. </p>
+
+<p>I haven't tried it to make sure it works, but I think it is worth a try.</p>
+</div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="/a/1529189/573032" title="short permalink to this answer" class="short-link" id="link-post-1529189">share</a><span class="lsep">|</span><a href="/posts/1529189/edit" class="edit-post" title="revise and improve this post">edit</a><span class="lsep">|</span><a id="flag-post-1529189" href="#" title="flag this post for serious problems or moderator attention">flag</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                                    answered
+ <span title="2009-10-07 02:26:31Z" class="relativetime">Oct 7 '09 at 2:26</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="/users/182837/carsten"><div class=""><img src="http://www.gravatar.com/avatar/394322a3fcb771b14b80b24c16d9a359?s=32&d=identicon&r=PG" alt="" width="32" height="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="/users/182837/carsten">Carsten</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">1,238</span><span title="8 silver badges"><span class="badge2"></span><span class="badgecount">8</span></span><span title="19 bronze badges"><span class="badge3"></span><span class="badgecount">19</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-1529189" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        <tfoot>
+            <tr>
+                <td></td>
+                <td class="comment-form"><form id="add-comment-1529189"></form></td>
+            </tr>
+        </tfoot>
+    
+        </table>
+    </div>
+    <a id="comments-link-1529189" class="comments-link" data-comments-count="0" title="ask author for clarification about this post">add comment</a>
+    
+</td>
+</tr>
+   
+    
+    </table>
+</div>
+    <a name='new-answer'></a>
+    <form id="post-form" action="/questions/1522444/answer/submit" method="post"  class="post-form">
+        <h2 class="space">Your Answer</h2>
+
+
+
+
+<script type="text/javascript">
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+         
+        prepareEditor({
+            heartbeatType: 'answer',
+            bindNavPrevention: true,
+            postfix: "",
+            onDemand: false,
+            discardSelector: ".discard-answer"
+            
+        });
+        
+
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">  
+
+    
+    <div class="wmd-container">
+        <div id="wmd-button-bar" class="wmd-button-bar"></div>
+        <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101"></textarea>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+    <div class="community-option">
+        <input id="communitymode" name="communitymode" type="checkbox" >
+        <label for="communitymode" title="Marking an answer community wiki encourages others to edit it by lowering the reputation barrier required to edit. However, you will not gain any upvote reputation from it. This cannot be undone.">community wiki</label>
+    </div>
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="a1c2a9ad0c2eaa9f5b8424ea893728da">
+        <input id="author" name="author" type="text">
+    </div>
+</div>                   
+            <div class="form-submit cbt">
+            <input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+            <a href="#" class="discard-answer dno">discard</a>
+        </div>
+    </form>
+
+    <script type="text/javascript">
+        StackExchange.using("inlineEditing", function () {
+            StackExchange.inlineEditing.init();
+        });
+    </script>
+
+
+</div>
+</div>
+<div id="sidebar">
+        <div class="module question-stats">
+        <p class="label-key">tagged</p>
+        <div class="tagged"><a href="/questions/tagged/java" class="post-tag" title="show questions tagged 'java'" rel="tag">java</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">&times;</span>&nbsp;<span class="item-multiplier-count">361978</span></span><br>
+<a href="/questions/tagged/encoding" class="post-tag" title="show questions tagged 'encoding'" rel="tag">encoding</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">&times;</span>&nbsp;<span class="item-multiplier-count">6643</span></span><br>
+<a href="/questions/tagged/stdout" class="post-tag" title="show questions tagged 'stdout'" rel="tag">stdout</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">&times;</span>&nbsp;<span class="item-multiplier-count">1013</span></span><br>
+<a href="/questions/tagged/nio" class="post-tag" title="show questions tagged 'nio'" rel="tag">nio</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">&times;</span>&nbsp;<span class="item-multiplier-count">833</span></span><br>
+</div>
+        <table id="qinfo">
+            <tr>
+                <td><p class="label-key">asked</p></td>
+                <td style="padding-left:10px"><p class="label-key" title="2009-10-05 21:17:55Z"><b>3 years ago</b></p></td>
+            </tr>
+            <tr>
+                <td><p class="label-key">viewed</p></td>
+
+                <td style="padding-left:10px">
+                    <p class="label-key">
+                        <b>4176 times</b>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td><p class="label-key">active</p></td>
+                <td style="padding-left:10px"><p class="label-key"><b><a href="?lastactivity" class="lastactivity-link" title="2011-07-25 13:30:48Z">1 year ago</a></b></p></td>
+            </tr>
+        </table>
+    </div>
+        
+                <script type="text/javascript">
+                var scriptSrc = "http://engine.adzerk.net/z/8277/adzerk2_2_17_45?keywords=java,encoding,stdout,nio,x-user-registered,x-1500plus-rep";
+                if (document.referrer) {
+                    if (/\?/.test(scriptSrc))
+                        scriptSrc += "&";
+                    else
+                        scriptSrc += "?";
+                    scriptSrc += "xReferrer=" + document.referrer;
+                }
+                StackExchange.ready(function () {
+                    var z = document.createElement("script");
+                    z.type = "text/javascript";
+                    z.async = "true";
+                    z.src = scriptSrc;
+                    var s = document.getElementsByTagName("script")[0];
+                    s.parentNode.insertBefore(z, s);
+                });
+            </script>
+        <div class="everyonelovesstackoverflow" id="adzerk2">
+        </div>
+    <div id="hireme">
+        <script type="text/javascript">
+            var careers_adurl="http://careers.stackoverflow.com/gethired/js",careers_cssurl="//careerscdn.sstatic.net/careers/gethired/sidebar.css?fffffffff879eaa0",careers_leaderboardcssurl="//careerscdn.sstatic.net/careers/gethired/ninja.min.css?3a3e90",careers_companycssurl="//careerscdn.sstatic.net/careers/gethired/company",careers_adselector="div.hireme, div#hireme";StackExchange.ready(function(){$.ajax({url:"//careerscdn.sstatic.net/careers/gethired/loader.min.js?3a3e90",dataType:"script",cache:!0})})
+        </script>
+    </div>
+
+
+
+      
+    
+    <div class="module sidebar-linked">
+        <h4 id="h-linked">Linked</h4>
+        <div class="linked" data-tracker="lq=1">
+            <div class="spacer">
+<a href="/questions/14706674/system-out-println-to-jtextarea" class="question-hyperlink">System.out.println to JTextArea</a>
+</div>
+
+        </div>
+    </div>
+    <div class="module sidebar-related">
+        <h4 id="h-related">Related</h4>
+        <div class="related" data-tracker="rq=1">
+            <div class="spacer">
+<a href="/questions/290743/how-do-i-redirect-terminal-output-from-a-c-program-to-system-out-with-jni" class="question-hyperlink">How do I redirect terminal output from a C program to System.out with JNI?</a>
+</div>
+<div class="spacer">
+<a href="/questions/492483/setting-the-correct-encoding-when-piping-stdout-in-python" class="question-hyperlink">Setting the correct encoding when piping stdout in python</a>
+</div>
+<div class="spacer">
+<a href="/questions/499070/java-nio-sending-large-messages-quickly-leads-to-truncated-packets-and-data-los" class="question-hyperlink">Java NIO: Sending large messages quickly leads to truncated packets and data loss</a>
+</div>
+<div class="spacer">
+<a href="/questions/1252468/java-converting-string-to-and-from-bytebuffer-and-associated-problems" class="question-hyperlink">Java: Converting String to and from ByteBuffer and associated problems</a>
+</div>
+<div class="spacer">
+<a href="/questions/1445342/excel-to-xml-encoding-question" class="question-hyperlink">Excel to XML, encoding question</a>
+</div>
+<div class="spacer">
+<a href="/questions/5624847/how-to-efficiently-convert-character-encoding-in-channel" class="question-hyperlink">How to efficiently convert character encoding in Channel?</a>
+</div>
+<div class="spacer">
+<a href="/questions/6005183/when-does-java-nio-selector-unblock-on-select-call" class="question-hyperlink">when does java nio selector unblock on select() call</a>
+</div>
+<div class="spacer">
+<a href="/questions/6127528/converting-from-windows-1252-to-utf8-in-java-null-characters-with-charsetdecode" class="question-hyperlink">Converting from Windows 1252 to UTF8 in Java: null characters with CharsetDecoder/Encoder</a>
+</div>
+<div class="spacer">
+<a href="/questions/6269557/when-using-java-runtim-exec-to-ssh-how-do-i-get-console-output-of-that-remote-m" class="question-hyperlink">When using java runtim.exec to ssh, how do I get console output of that remote machine?</a>
+</div>
+<div class="spacer">
+<a href="/questions/7611152/nio-performance-improvement-compared-to-traditional-io-in-java" class="question-hyperlink">NIO Performance Improvement compared to traditional IO in Java</a>
+</div>
+<div class="spacer">
+<a href="/questions/8108861/how-can-i-generate-un-mappable-input-for-a-java-charsetdecoder" class="question-hyperlink">How can I generate &#39;un-mappable&#39; input for a Java CharsetDecoder?</a>
+</div>
+<div class="spacer">
+<a href="/questions/8708342/redirect-console-output-to-string-in-java" class="question-hyperlink">Redirect console output to string in java</a>
+</div>
+<div class="spacer">
+<a href="/questions/9266168/communication-between-bash-and-java-with-channels-sending-end-of-transmission" class="question-hyperlink">Communication between Bash and Java with channels: sending end-of-transmission</a>
+</div>
+<div class="spacer">
+<a href="/questions/9704237/java-convert-character-stream-into-human-readable-string" class="question-hyperlink">Java convert character stream into human &ldquo;readable&rdquo; String</a>
+</div>
+<div class="spacer">
+<a href="/questions/9736057/infinite-loop-with-selector-even-theres-no-connection-from-client" class="question-hyperlink">Infinite loop with Selector even there&#39;s no connection from client</a>
+</div>
+<div class="spacer">
+<a href="/questions/9996710/sys-stdout-encoding-is-none-how-can-i-fix-it-without-changing-the-script" class="question-hyperlink">sys.stdout.encoding is None, how can I fix it without changing the script?</a>
+</div>
+<div class="spacer">
+<a href="/questions/10087534/java-io-performance-tuning" class="question-hyperlink">Java.io : Performance Tuning</a>
+</div>
+<div class="spacer">
+<a href="/questions/10716057/java-nio-selectors-and-socketchannel-for-continues-streaming" class="question-hyperlink">java.nio Selectors and SocketChannel for continues Streaming</a>
+</div>
+<div class="spacer">
+<a href="/questions/11362223/how-to-read-charset-utf-8-encoded-buffer-in-server-java-nio" class="question-hyperlink">how to read Charset UTF-8 encoded buffer in server java.nio</a>
+</div>
+<div class="spacer">
+<a href="/questions/11563842/node-js-stdout-encoding-issues" class="question-hyperlink">Node.js stdout encoding issues</a>
+</div>
+<div class="spacer">
+<a href="/questions/12273579/how-to-use-java-nio-to-write-an-uploaded-image-from-servletinputstream" class="question-hyperlink">How to use Java nio to write an uploaded image from ServletInputStream?</a>
+</div>
+<div class="spacer">
+<a href="/questions/12324228/perl-capturing-stdout-logfile-ends-up-binary" class="question-hyperlink">perl: capturing STDOUT- logfile ends up binary</a>
+</div>
+<div class="spacer">
+<a href="/questions/13491876/traditional-io-in-client-side-and-nio-in-server-how-do-i-get-specific-msg-if-cl" class="question-hyperlink">Traditional IO in client side and NIO in Server, how do i get specific msg if client sends multiple message in the same socket?</a>
+</div>
+<div class="spacer">
+<a href="/questions/13923355/why-python-does-not-behave-the-same-when-printing-unicode-strings-in-console-and" class="question-hyperlink">Why python does not behave the same when printing unicode strings in console and pipes?</a>
+</div>
+<div class="spacer">
+<a href="/questions/14153488/java-nio-read-return-1" class="question-hyperlink">Java nio read() return -1</a>
+</div>
+
+        </div>
+    </div>
+        <div class="everyonelovesstackoverflow" id="adzerk3">
+        </div>
+
+
+</div>
+
+<div id="feed-link">
+    <div id="feed-link-text"><a href="/feeds/question/1522444" title="feed of this question and its answers"><span class="feed-icon"></span>question feed</a></div>
+</div>
+<script type="text/javascript">
+StackExchange.ready(function(){$.get('/posts/1522444/ivc/f228');});
+</script>
+<noscript>
+    <div><img src="/posts/1522444/ivc/f228" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display:none" id="prettify-lang">lang-java</div></div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                    <a href="/about">about</a> |
+                <a href="/faq">faq</a> |
+                <a href="http://blog.stackexchange.com?blb=1">blog</a> |
+                    <a href="http://chat.stackoverflow.com">chat</a> |
+                <a href="http://data.stackexchange.com">data</a> |
+                <a href="http://stackexchange.com/legal">legal</a> |
+                <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a> |
+                <a href="http://stackexchange.com/about/hiring">jobs</a> |
+                <a href="http://engine.adzerk.net/redirect/0/2776/2751/0/4de3c60f719c4dfcb1a57531c7050090/0">advertising info</a> |
+
+                <a onclick="StackExchange.switchMobile('on', '/questions/1522444/how-to-redirect-all-console-output-to-a-swing-jtextarea-jtextpane-with-the-right')">mobile</a> |
+
+                <b><a href="/help">contact us</a></b>
+                  | <b><a href="http://meta.stackoverflow.com">feedback</a></b>
+                <div id="footer-sites">
+                    
+                        <span style="color:#FE7A15;font-size:140%">&#9632;</span>&nbsp;<a href="http://stackoverflow.com">stackoverflow.com</a>&nbsp; 
+                        <span style="color:#FE7A15;font-size:140%">&#9632;</span>&nbsp;<a href="http://stackapps.com">api/apps</a>&nbsp; 
+                        <span style="color:#FE7A15;font-size:140%">&#9632;</span>&nbsp;<a href="http://careers.stackoverflow.com">careers 2.0</a>&nbsp; 
+                        <span style="color:#E8272C;font-size:140%">&#9632;</span>&nbsp;<a href="http://serverfault.com">serverfault.com</a>&nbsp; 
+                        <span style="color:#00AFEF;font-size:140%">&#9632;</span>&nbsp;<a href="http://superuser.com">superuser.com</a>&nbsp; 
+                        <span style="color:#969696;font-size:140%">&#9632;</span>&nbsp;<a href="http://meta.stackoverflow.com">meta</a>&nbsp; 
+                        <span style="color:#46937D;font-size:140%">&#9632;</span>&nbsp;<a href="http://area51.stackexchange.com">area&nbsp;51</a>&nbsp; 
+                        <span style="color:#C0D0DC;font-size:140%">&#9632;</span>&nbsp;<a href="http://webapps.stackexchange.com">webapps</a>&nbsp; 
+                        <span style="color:#000000;font-size:140%">&#9632;</span>&nbsp;<a href="http://gaming.stackexchange.com">gaming</a>&nbsp; 
+                        <span style="color:#dd4814;font-size:140%">&#9632;</span>&nbsp;<a href="http://askubuntu.com">ubuntu</a>&nbsp; 
+                        <span style="color:#9ce4fe;font-size:140%">&#9632;</span>&nbsp;<a href="http://webmasters.stackexchange.com">webmasters</a>&nbsp; 
+                        <span style="color:#cf4d3f;font-size:140%">&#9632;</span>&nbsp;<a href="http://cooking.stackexchange.com">cooking</a>&nbsp; 
+                        <span style="color:#f4f28d;font-size:140%">&#9632;</span>&nbsp;<a href="http://gamedev.stackexchange.com">game development</a>&nbsp; 
+                        <span style="color:#0f3559;font-size:140%">&#9632;</span>&nbsp;<a href="http://math.stackexchange.com">math</a>&nbsp; 
+                        <span style="color:#f2f2f2;font-size:140%">&#9632;</span>&nbsp;<a href="http://photo.stackexchange.com">photography</a>&nbsp; 
+                        <span style="color:#037187;font-size:140%">&#9632;</span>&nbsp;<a href="http://stats.stackexchange.com">stats</a>&nbsp; 
+                        <span style="color:#f1e7cc;font-size:140%">&#9632;</span>&nbsp;<a href="http://tex.stackexchange.com">tex</a>&nbsp; 
+                        <span style="color:#e1cdae;font-size:140%">&#9632;</span>&nbsp;<a href="http://english.stackexchange.com">english</a>&nbsp; 
+                        <span style="color:#a2d9f6;font-size:140%">&#9632;</span>&nbsp;<a href="http://cstheory.stackexchange.com">theoretical cs</a>&nbsp; 
+                        <span style="color:#1b3e6c;font-size:140%">&#9632;</span>&nbsp;<a href="http://programmers.stackexchange.com">programmers</a>&nbsp; 
+                        <span style="color:#293a5d;font-size:140%">&#9632;</span>&nbsp;<a href="http://unix.stackexchange.com">unix</a>&nbsp;
+                        <span style="color:#bec0cb;font-size:140%">&#9632;</span>&nbsp;<a href="http://apple.stackexchange.com">apple</a>&nbsp;
+                        <span style="color:#939185;font-size:140%">&#9632;</span>&nbsp;<a href="http://wordpress.stackexchange.com">wordpress</a>&nbsp;
+                        <span style="color:#ebf5f5;font-size:140%">&#9632;</span>&nbsp;<a href="http://physics.stackexchange.com">physics</a>&nbsp;
+                        <span style="color:#4176ab;font-size:140%">&#9632;</span>&nbsp;<a href="http://diy.stackexchange.com">home&nbsp;improvement</a>&nbsp;
+                        <span style="color:#d1d8d7;font-size:140%">&#9632;</span>&nbsp;<a href="http://gis.stackexchange.com">gis</a>&nbsp;
+                        <span style="color:#e5e2d3;font-size:140%">&#9632;</span>&nbsp;<a href="http://electronics.stackexchange.com">electrical&nbsp;engineering</a>&nbsp;
+                        <span style="color:#a4c639;font-size:140%">&#9632;</span>&nbsp;<a href="http://android.stackexchange.com">android</a>&nbsp;
+                        <span style="color:#2e4e60;font-size:140%">&#9632;</span>&nbsp;<a href="http://security.stackexchange.com">security</a>&nbsp;
+                        <span style="color:#45bcb5;font-size:140%">&#9632;</span>&nbsp;<a href="http://bicycles.stackexchange.com">bicycles</a>&nbsp;
+                        <span style="color:#00adee;font-size:140%">&#9632;</span>&nbsp;<a href="http://dba.stackexchange.com">dba</a>&nbsp;
+                        <span style="color:#2edaf0;font-size:140%">&#9632;</span>&nbsp;<a href="http://drupal.stackexchange.com">drupal</a>&nbsp;
+                        <span style="color:#213951;font-size:140%">&#9632;</span>&nbsp;<a href="http://sharepoint.stackexchange.com">sharepoint</a>&nbsp;
+                        <span style="color:#73abb3;font-size:140%">&#9632;</span>&nbsp;<a href="http://scifi.stackexchange.com">scifi&nbsp;&amp;&nbsp;fantasy</a>&nbsp;
+                        <span style="color:#23629F;font-size:140%">&#9632;</span>&nbsp;<a href="http://ux.stackexchange.com">user&nbsp;experience</a>&nbsp;
+                        <span style="color:#faff72;font-size:140%">&#9632;</span>&nbsp;<a href="http://skeptics.stackexchange.com">skeptics</a>&nbsp;
+                        <span style="color:#623121;font-size:140%">&#9632;</span>&nbsp;<a href="http://rpg.stackexchange.com">rpg</a>&nbsp;
+                        <span style="color:#e4be88;font-size:140%">&#9632;</span>&nbsp;<a href="http://judaism.stackexchange.com">judaism</a>&nbsp;
+                        <span style="color:#ffecb1;font-size:140%">&#9632;</span>&nbsp;<a href="http://mathematica.stackexchange.com">mathematica</a>&nbsp;
+                        <span style="color:#1b8598;font-size:140%">&#9632;</span>&nbsp;<a href="http://travel.stackexchange.com">travel</a>&nbsp;
+                </div>
+            </div>
+            <div id="footer-flair">
+                <a class="peer1" href="http://www.peer1.com/stackoverflow"></a>  
+	            <a href="http://creativecommons.org/licenses/by-sa/3.0/" class="cc-wiki-link"></a>
+                <div id="svnrev">rev 2013.2.4.1332</div>
+                        </div>
+            <div id="copyright">
+                site design / logo &copy; 2013 stack exchange inc; 
+                user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc-wiki</a> with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            
+
+        </div>
+    </div>
+    
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+    <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-5620270-1']);
+        _gaq.push(['_setCustomVar', 1, 'tags', '|java|encoding|stdout|nio|']); 
+        _gaq.push(['_setCustomVar', 2, 'accountid', '698222',2]); 
+_gaq.push(['_trackPageview']);
+    var _qevents = _qevents || [];
+    (function(){
+        var s=document.getElementsByTagName('script')[0];
+        var ga=document.createElement('script');
+        ga.type='text/javascript';
+        ga.async=true;
+        ga.src='http://www.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(ga,s);
+        var sc=document.createElement('script');
+        sc.type='text/javascript';
+        sc.async=true;
+        sc.src='http://edge.quantserve.com/quant.js'; 
+        s.parentNode.insertBefore(sc,s);
+    })();
+    </script>
+    <script type="text/javascript">
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>    
+    
+</body>
+</html>

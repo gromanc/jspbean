@@ -1,0 +1,779 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>How to output UTF-8 In Console for... :: JetBrains Developer Community</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Language" content="en-US" />
+<meta name="keywords" content=""/>
+
+<link rel="search"
+    href="/opensearch.xml;jsessionid=C5772BE1C750763D1FFE905311742F79"
+    title="JetBrains Developer Community"
+    type="application/opensearchdescription+xml"/>
+
+
+<link rel="shortcut icon" href="favicon_cs.ico" />
+<link rel="icon" type="image/png" href="/themes/generated_advanced_skin_global/images/favicon_cs.png" />
+
+    <script type="text/javascript">
+        if (typeof(_jive_base_url) == "undefined") {
+            var _jive_base_url = "/;jsessionid=C5772BE1C750763D1FFE905311742F79";
+            <!-- need to strip ;jsessionid=3rjp0oit23hk7 from urls -->
+            if (_jive_base_url.indexOf(";") > 0) {
+                _jive_base_url = _jive_base_url.substring(0, _jive_base_url.indexOf(";"));
+            }
+            if (_jive_base_url.charAt(_jive_base_url.length -1) == '/') {
+                _jive_base_url = _jive_base_url.substring(0,_jive_base_url.length -1);
+            }
+        }
+    </script>
+
+
+
+    <script type="text/javascript">
+        window.SPELL_LANGS = "English (Canada)=en_ca,English (United Kingdom)=en_gb,+English (United States)=en_us,French=fr,French (Canada)=fr_ca,German=de,Italian=it,Spanish=es";
+        window.CS_BASE_URL = "";
+        window.tinyMCEPreInit = {
+            suffix : "_src",
+            base : CS_BASE_URL + "/resources/scripts/tiny_mce3"
+        };
+    </script>
+     
+
+
+
+
+
+
+    
+
+    <script type="text/javascript">
+        var profileShortUrl = "/profile-short.jspa;jsessionid=C5772BE1C750763D1FFE905311742F79";
+        var profileLoadingTooltip = "Loading user profile";
+        var profileErrorTooltip = "There was an error loading that profile information.";
+
+        var projectChooserUrl = "/project-chooser!input.jspa;jsessionid=C5772BE1C750763D1FFE905311742F79";
+        var groupChooserUrl = "/group-chooser!input.jspa;jsessionid=C5772BE1C750763D1FFE905311742F79";
+    </script>
+
+
+
+    <link rel="stylesheet" href="/resources/scripts/zapatec/styles/aqua.css;jsessionid=C5772BE1C750763D1FFE905311742F79" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/styles/jive-global.css;jsessionid=C5772BE1C750763D1FFE905311742F79" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/styles/jive-userbar.css;jsessionid=C5772BE1C750763D1FFE905311742F79" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/styles/jive-sidebar.css;jsessionid=C5772BE1C750763D1FFE905311742F79" type="text/css" media="screen" />
+        <link rel="stylesheet" href="/styles/jive-external.css;jsessionid=C5772BE1C750763D1FFE905311742F79" type="text/css" media="screen" />
+
+    <!--[if IE 6]>
+    <style type="text/css">
+    /* hack for IE6's lack of alpha PNG support */
+    * html #jive-wrapper .ie6png,
+    * html #jive-wrapper #jive-global-header *.ie6png,
+    * html #jive-wrapper #user-bar-wrapper *.ie6png,
+    * html #jive-wrapper #jive-body *.ie6png,
+    * html #jive-wrapper #jive-footer *.ie6png {
+        background-image: expression(
+        this.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src=" +
+        (this.tagName=='IMG' ? this.src : this.currentStyle.backgroundImage.split('\"')[1]) + ")",
+        this.runtimeStyle.backgroundImage = "none",
+        this.src = "/images/transparent.png;jsessionid=C5772BE1C750763D1FFE905311742F79"
+        );
+        }
+    </style>
+    <![endif]-->
+    
+    
+
+    <style type="text/css" media="all">
+        @import "/styles/jive-thread.css;jsessionid=C5772BE1C750763D1FFE905311742F79";
+    </style>
+
+            <link rel="alternate" type="application/rss+xml"
+                title=" IntelliJ IDEA Users Discussion Threads Feed"
+                href="/community/feeds/threads;jsessionid=C5772BE1C750763D1FFE905311742F79?community=2054">
+
+        <link rel="alternate" type="application/rss+xml"
+            title="Messages in 'How to output UTF-8 In Console for Tomcat Webapps?' Thread Feed"
+            href="/community/feeds/messages;jsessionid=C5772BE1C750763D1FFE905311742F79?thread=303815">
+
+
+
+<script type="text/javascript">
+if (dwr == null) var dwr = {};
+if (dwr.engine == null) dwr.engine = {};
+if (DWREngine == null) var DWREngine = dwr.engine;
+
+dwr.engine._origScriptSessionId = "C8E9C9868C2C8C5CF1E26A713D5DBFE9";
+dwr.engine._sessionCookieName = "JSESSIONID"; // JSESSIONID
+dwr.engine._allowGetForSafariButMakeForgeryEasier = "true";
+dwr.engine._scriptTagProtection = "throw 'allowScriptTagRemoting is false.';";
+dwr.engine._defaultPath = "/dwr/interface";
+dwr.engine._pollWithXhr = "false";
+</script>
+        <script type="text/javascript">
+
+            var threadID = 303815;
+
+            function watchThread() {
+                Watches.watchThread(threadID, {
+                        callback:function() {
+                            $('jive-link-thread-stopWatch').show();
+                            $('jive-link-thread-startWatch').hide();
+                            Jive.AlertMessage('thread.watch.notify', {
+                                    beforeStart:function() {
+                                        $('thread.watch.notify').innerHTML = '<div>' + 'You are receiving email notifications for this thread. To unsubscribe, click \"Stop email notifications\" below.'.escapeHTML() + '</div>';
+                                    }
+                            });
+                        },
+                        errorHandler:function(msg, e) {
+                            alert("An internal error ocurred while updating email notifications.");
+                        }
+                });
+            }
+
+            function removeThreadWatch() {
+                Watches.removeThreadWatch(threadID, {
+                        callback:function() {
+                            $('jive-link-thread-stopWatch').hide();
+                            $('jive-link-thread-startWatch').show();
+                            Jive.AlertMessage('thread.watch.notify', {
+                                    beforeStart:function() {
+                                        $('thread.watch.notify').innerHTML = '<div>' + 'You have stopped receiving email notifications for this thread. To subscribe to new messages via email, click \"Receive email notifications\" below.'.escapeHTML() + '</div>';
+                                    }
+                            });
+                        },
+                        errorHandler:function(msg, e) {
+                            alert("An internal error ocurred while updating email notifications.");
+                        }
+                });
+            }
+
+        </script>
+
+
+    
+
+
+
+
+
+        <link rel="stylesheet" href="/themes/generated_advanced_skin_global/styles/theme.css" type="text/css" media="all" />
+
+    <style type="text/css">/* custom-css */</style>
+    <style type="text/css">/* custom-css-container */</style>
+
+<script type="text/javascript" language="JavaScript" src="/resources/scripts/gen/5dd18f02ce4b72a51fd2ec9afd697718.js;jsessionid=C5772BE1C750763D1FFE905311742F79"></script>
+<script type="text/javascript" language="JavaScript">
+        // begin list of custom CSS
+        jive.rte.defaultStyles = new Array();
+        // end list of custom CSS
+
+
+            var jiveControl = new jive.model.Controller();
+
+
+        Zapatec.Calendar._TT["DEF_DATE_FORMAT"] = "%m/%d/%Y";
+
+
+    function writeMoreLikeThisResults(data) {
+        var results = data.results;
+        var ul = $("jive-more-like-this-" + __objectType + "-" + __objectID);
+        if (results.length > 0) {
+            ul.update('');
+            results.each(function(result) {
+                ul.insert(new Element("li").update(resultFormatter(result)));
+            });
+        }
+        else {
+            ul.update(new Element("li").update(new Element("span").update(msg_noContent)));
+        }
+    }
+
+    function resultFormatter(data) {
+        return new Element("a", {href: _jive_base_url + data.objectURL, "class": data.objectClass})
+            .insert(new Element("span").update(data.subject));
+    }
+
+    document.observe("dom:loaded", function() {
+    MoreLikeThis.getMoreLikeThisResults(__objectType, __objectID, __numResults, {
+       callback:function(data) {
+           writeMoreLikeThisResults(data);
+        },
+        errorHandler:function(errorString) {
+            $("jive-more-like-this-" + __objectType + "-" + __objectID).update("<li><span>" + msg_errorContent + " " +
+                    + errorString + "</span></li>");
+         }}
+     );
+     });
+
+
+        var quickuserprofile = new QuickUserProfile("jive-note-user-body", profileShortUrl, profileLoadingTooltip,
+                profileErrorTooltip);
+        var jiveprojectchooser = new JiveProjectChooser(projectChooserUrl);
+        var jivegroupchooser = new JiveGroupChooser(groupChooserUrl);
+
+
+</script>
+
+</head>
+<body class="jive-body-content jive-body-content-discussion" >
+
+    <div id="jive-wrapper" class="clearfix">
+
+<!-- BEGIN header -->
+
+<div id="jb_nav">
+    <a href="http://www.jetbrains.com" class="jb_logo"><img src="/themes/generated_advanced_skin_global/images/logo.gif" alt="JetBrains home" border="0"/></a>
+</div>
+
+
+<div id="jive-global-header">
+    <div id="jive-global-header-texture">
+        <a href="/;jsessionid=C5772BE1C750763D1FFE905311742F79">
+            <img src="/themes/generated_advanced_skin_global/images/jive-hdr-bg2.jpg" style="display:none;"/>
+        </a>
+    </div>
+</div>
+<!-- END header -->
+<!-- BEGIN user bar -->
+<div id="user-bar-wrapper">
+        
+        
+<div id="jive-userbar">
+
+    
+        <div id="jive-userbar-login">
+            <form action="/cs_login;jsessionid=C5772BE1C750763D1FFE905311742F79" method="post" name="loginform" autocomplete="off">
+                
+                
+
+				<span class="jive-userbar-login-welcome" id="jiveLoginWelcome">
+					<span class="jive-userbar-login-guest">
+						Welcome,
+                        Guest
+                    </span>
+
+                    <span class="jive-userbar-login-loginlink">
+						<a href="#"
+                            onClick="jivetoggleLogin(); return false;"
+                            accesskey="L"><u>L</u>ogin</a>
+                    </span>
+
+                        <span class="jive-userbar-login-new">
+                            <a href="http://account.jetbrains.com/secured/CreateForm.action"
+                                accesskey="R"
+                            ><u>R</u>egister</a>
+                        </span>
+                </span>
+
+                <span class="jive-userbar-login-form" id="jiveLoginForm" style="display: none;">
+
+					<span class="jive-userbar-login-username">
+						<label for="login-username">
+Username:						</label>
+						<input type="text" name="username" size="20" maxlength="150" value="" tabindex="1" id="login-username">
+					</span>
+
+					<span class="jive-userbar-login-password">
+						<label for="login-password">
+Password:						</label>
+							<a href="https://account.jetbrains.com/secured/ForgotPasswordForm.action" title="I forgot my password ">(?)</a>
+						<input type="password" name="password" size="20" maxlength="150" value="" tabindex="2" id="login-password">
+					</span>
+
+					<span class="jive-userbar-login-auto">
+						<input type="checkbox" name="autoLogin" id="login-auto" value="true" tabindex="3">
+						<label for="login-auto">Remember Me</label>
+					</span>
+
+					<span class="jive-userbar-login-submit">
+						<input type="submit" name="login" value="Login" tabindex="4" class="jive-login-button">
+						<input type="reset" name="doCancel" value="Cancel" tabindex="5" class="jive-cancel-button" onclick="jivetoggleLogin();">
+					</span>
+
+				</span>
+
+            </form>
+        </div>
+
+
+    <!-- BEGIN choose-container create panel -->
+    <div class="jive-contentcreate-menu" id="jiveContentCreatePanel" style="display: none;">
+        <div class="jive-contentcreate-menu-container" id="jiveContentCreateContainer"></div>
+    </div>
+    <!-- END choose-container create panel -->
+
+
+	<!-- BEGIN right-aligned user bar items -->
+    <div id="jive-userbar-right">
+
+
+
+
+    </div>
+    <!-- END right-aligned user bar items -->
+</div>
+
+</div>
+<!-- END user bar -->
+
+
+        <div id="jive-body">
+
+<!-- BEGIN breadcrumb -->
+<div id="jive-breadcrumb">
+
+
+    <span>
+
+
+
+                <a href="/;jsessionid=C5772BE1C750763D1FFE905311742F79">JetBrains Developer Community</a> &gt; 
+
+                <a href="/community/idea;jsessionid=C5772BE1C750763D1FFE905311742F79"
+                   >IntelliJ IDEA</a> &gt; 
+
+                <a href="/community/idea/ideacommunity;jsessionid=C5772BE1C750763D1FFE905311742F79"
+                   >IntelliJ IDEA Users</a> &gt; 
+
+
+
+
+
+        <a class='jive-breadcrumb-last' href="/community/idea/ideacommunity;jsessionid=C5772BE1C750763D1FFE905311742F79?view=discussions">Discussions</a></span>
+</div>
+<!-- END breadcrumb -->
+
+            <div id="jive-userbar-search">
+                <form action="/search.jspa;jsessionid=C5772BE1C750763D1FFE905311742F79" method="get">
+                        <input type="hidden" name="resultTypes" value="DOCUMENT"/>
+                        <input type="hidden" name="resultTypes" value="MESSAGE"/>
+                        <input type="hidden" name="resultTypes" value="COMMUNITY"/>
+                        <input type="hidden" name="resultTypes" value="TASK"/>
+                        <input type="hidden" name="resultTypes" value="PROJECT"/>
+                        <input type="hidden" name="resultTypes" value="SOCIAL_GROUP"/>
+                        <input type="hidden" name="resultTypes" value="COMMENT"/>
+                <input type="hidden" name="peopleEnabled" value="false"/>
+                    <input type="hidden" name="communityID" value="2054"/>
+                <input type="text" id="jive-query" name="q" class="jive-userbar-search-field" autocomplete="off"
+                       value="Search the Community"
+                       onfocus="this.value= (this.value=='Search the Community') ? '' : this.value;"/>
+                <button type="submit" value="Search" class="jive-userbar-search-button">Search</button>
+                <a href="#" onfocus="$('jive-query').focus(); return false;" accesskey="S"></a>
+                </form>
+
+            </div>
+
+            
+
+
+
+<!-- BEGIN header & intro  -->
+<div id="jive-body-intro">
+
+    <div id="jive-body-intro-content">
+
+
+            <span class="jive-pagination" style="margin-top:-5px">
+                <span class="jive-pagination-prevnext">
+                        <a class="jive-pagination-prev" href="/thread/441506;jsessionid=C5772BE1C750763D1FFE905311742F79?tstart=-1">Previous</a>
+                        <a href="/thread/441435;jsessionid=C5772BE1C750763D1FFE905311742F79?tstart=1" class="jive-pagination-next">Next</a>
+                </span>
+            </span>
+
+        <a href="/community/idea/ideacommunity;jsessionid=C5772BE1C750763D1FFE905311742F79?view=discussions&amp;start=0"><span class="jive-icon-sml jive-icon-arrow-generic-up"></span>Up to Discussions in&nbsp;IntelliJ IDEA Users</a>
+
+    </div>
+</div>
+<!-- END header & intro -->
+
+
+<!-- BEGIN main body -->
+<div id="jive-body-main">
+
+
+    <!-- BEGIN main body column -->
+    <div id="jive-body-maincol-container">
+        <div id="jive-body-maincol">
+
+
+
+
+            <div id="thread.watch.notify" class="jive-info-box" style="display:none"></div>
+
+
+
+
+
+
+
+            <!-- BEGIN thread messages -->
+            <div class="jive-thread-messages">
+
+
+
+
+
+
+
+
+
+            <!-- BEGIN thread info -->
+            <div class="jive-thread-info">
+                <div class="jive-thread-info-padding">
+
+                    <strong>1 Replies</strong>
+                    <a href="/message/5477657;jsessionid=C5772BE1C750763D1FFE905311742F79?tstart=0#5477657">Last post</a>:
+                    Jan 30, 2013 10:40 PM by
+Daniel Serodio                        <span><a href="/community/feeds/messages;jsessionid=C5772BE1C750763D1FFE905311742F79?thread=303815" class="jive-link-rss-small">&nbsp;</a></span>
+
+
+
+
+
+                </div>
+            </div>
+            <!-- END thread info -->
+
+            <!-- BEGIN original thread post -->
+                <div class="jive-thread-post">
+
+
+                <a name="303815"></a>
+                    <div class="jive-thread-post-body">
+
+                        <div class="jive-author">
+
+                                <span class="jive-author-avatar-container">
+            <a href="/people/stormking;jsessionid=C5772BE1C750763D1FFE905311742F79"
+                class="jiveTT-hover-user"
+                onmouseover="quickuserprofile.getUserProfileTooltip(42151);"
+                onmouseout="quickuserprofile.cancelTooltip();"
+            >
+                <img
+                    class="jive-avatar"
+
+                src="/people/stormking/avatar;jsessionid=C5772BE1C750763D1FFE905311742F79/46.png?a=-1"
+                border="0" height="46" width="46"
+                alt="stormking"
+                /></a>
+                <span><img src="/resources/images/status/statusicon-47.gif;jsessionid=C5772BE1C750763D1FFE905311742F79" alt="Newbie" title="Newbie" /> </span>
+                                </span>
+
+                                <div class="jive-username-link-wrapper">
+<a href="/people/stormking;jsessionid=C5772BE1C750763D1FFE905311742F79"
+id="jive-59Rwp336aQOOCLGF"
+onmouseover="quickuserprofile.getUserProfileTooltip(42151);"
+onmouseout="quickuserprofile.cancelTooltip();"
+class="jiveTT-hover-user jive-username-link"
+>stormking</a>                                </div>
+                                <em>9 posts since <br/>Sep 30, 2005</em>
+
+
+                        </div>                                                            
+
+                        <div class="jive-thread-post-body-container">
+
+                            <div class="jive-thread-post-subject">
+                                <div class="jive-thread-post-subject-content">
+                                    <div class="jive-thread-post-moderating">Currently Being Moderated</div>
+                                    <h3>Apr 27, 2011 9:52 PM</h3>
+                                    <h2><a href="/message/5301610;jsessionid=C5772BE1C750763D1FFE905311742F79#5301610"> How to output UTF-8 In Console for Tomcat Webapps?</a></h2>
+                                </div>
+                            </div>
+
+                            <div class="jive-thread-post-message">
+                                <!-- [DocumentBodyStart:6b0a8402-4029-463d-85b3-3df1a3e9a574] --><div class='jive-rendered-content'><p>I need to output Japanese to the IntelliJ console for my webapp logging. When I run a junit test, the correct UTF-8 chars show up. While running inside of Tomcat in IntelliJ, the characters are messed up. How do I fix this?</p><p style="min-height: 8pt; height: 8pt; padding: 0px;">&nbsp;</p><p>I am running IDEA 10.0.3 with the settings File Encoding -&gt; IDE Encoding set to UTF-8. I even put -Dfile.encoding=UTF-8 inside of the catalina.bat file and verified the encoding is UTF-8 with:</p><p style="min-height: 8pt; height: 8pt; padding: 0px;">&nbsp;</p><p>&#160;&#160;&#160;&#160;&#160;&#160;&#160; System.out.println(System.getProperty("file.encoding") + ": &eacute; &#224; &#234;");</p><p style="min-height: 8pt; height: 8pt; padding: 0px;">&nbsp;</p><p>but I get:</p><p>UTF-8: &Atilde;&copy; &Atilde;&#160; &Atilde;&#170;</p><p style="min-height: 8pt; height: 8pt; padding: 0px;">&nbsp;</p><p>instead.</p><p style="min-height: 8pt; height: 8pt; padding: 0px;">&nbsp;</p><p>What else can I set to make sure a Tomcat webapp displays UTF-8 in the IDEA console? Why does it work in a unit test but not a webapp?</p><p style="min-height: 8pt; height: 8pt; padding: 0px;">&nbsp;</p><p>Thanks.</p></div><!-- [DocumentBodyEnd:6b0a8402-4029-463d-85b3-3df1a3e9a574] -->
+
+    <!-- BEGIN attachments -->
+<!-- END attachments -->
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+                <!-- END original thread post -->
+
+
+
+
+
+                <!-- BEGIN reply -->
+
+                <div class="jive-thread-reply-indent1">
+                <div class="jive-thread-reply-indent-shadow">
+
+                <div class="jive-thread-reply
+                
+                 
+                 ">
+
+                    <div class="jive-thread-reply-body">
+                        <a name="5477657"></a>
+                        <div class="jive-author">
+
+                                <span class="jive-author-avatar-container">
+            <a href="/people/dserodio;jsessionid=C5772BE1C750763D1FFE905311742F79"
+                class="jiveTT-hover-user"
+                onmouseover="quickuserprofile.getUserProfileTooltip(93998);"
+                onmouseout="quickuserprofile.cancelTooltip();"
+            >
+                <img
+                    class="jive-avatar"
+
+                src="/people/dserodio/avatar;jsessionid=C5772BE1C750763D1FFE905311742F79/46.png?a=1826"
+                border="0" height="46" width="46"
+                alt="Daniel Serodio"
+                /></a>
+                <span><img src="/resources/images/status/statusicon-47.gif;jsessionid=C5772BE1C750763D1FFE905311742F79" alt="Newbie" title="Newbie" /> </span>
+                                </span>
+
+                                <div class="jive-username-link-wrapper">
+<a href="/people/dserodio;jsessionid=C5772BE1C750763D1FFE905311742F79"
+id="jive-xG0uA3gI9o53K1hb"
+onmouseover="quickuserprofile.getUserProfileTooltip(93998);"
+onmouseout="quickuserprofile.cancelTooltip();"
+class="jiveTT-hover-user jive-username-link"
+>Daniel Serodio</a>                                </div>
+                                <em>1 posts since <br/>Jan 30, 2013</em>
+
+                        </div>
+
+                        <div class="jive-thread-reply-body-container">
+                            <div class="jive-thread-reply-subject">
+
+                                <div class="jive-thread-post-moderating">Currently Being Moderated</div>
+                                <div class="jive-thread-reply-date">
+                                <span>Jan 30, 2013 10:40 PM</span>
+
+                                    <a href="/message/;jsessionid=C5772BE1C750763D1FFE905311742F795301610#5301610"
+                                       title="in response to: stormking"
+                                            ><img src="/images/up-10x10.gif;jsessionid=C5772BE1C750763D1FFE905311742F79" width="10" height="10" border="0" alt=""/></a>
+in response to:                                     <a href="/message/;jsessionid=C5772BE1C750763D1FFE905311742F795301610#5301610"
+                                       title="Go to message"
+                                            >stormking</a>
+
+                                </div>
+
+
+                                <strong><a href="/message/5477657;jsessionid=C5772BE1C750763D1FFE905311742F79#5477657"> Re: How to output UTF-8 In Console for Tomcat Webapps?</a></strong>
+
+
+
+
+                            </div>
+                            <div class="jive-thread-reply-message">
+                                <!-- [DocumentBodyStart:7e401e96-d8d9-4b45-8fa9-5892b31e2b88] --><div class='jive-rendered-content'><p>I have this same problem in IDEA 12.0.2 and Tomcat 7.0.28. Did you find a solution?</p><p style="min-height: 8pt; height: 8pt; padding: 0px;">&nbsp;</p><p>Regards,</p><p>Daniel Serodio</p></div><!-- [DocumentBodyEnd:7e401e96-d8d9-4b45-8fa9-5892b31e2b88] -->
+
+    <!-- BEGIN attachments -->
+<!-- END attachments -->
+
+
+
+                                <!-- BEGIN helpful & correct buttons -->
+                                <!-- END helpful & correct buttons -->
+
+                            </div>
+
+                                <!-- BEGIN content details -->
+                                <div class="jive-content-controls clearfix">
+                                            <a href="/message-abuse!input.jspa;jsessionid=C5772BE1C750763D1FFE905311742F79?objectID=5477657&amp;objectType=2" class="jive-link-warningsmall">Report Abuse</a>
+
+
+                                </div>
+                                <!-- END content details-->
+                        </div>
+
+                    </div>
+                </div>
+                </div>
+                </div>
+                <!-- END reply -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            <!-- END messages -->
+
+        </div>
+    </div>
+    <!-- END main body column -->
+
+
+
+    <!-- BEGIN sidebar column container -->
+    <div id="jive-body-sidebarcol-container">
+        <!-- BEGIN sidebar column -->
+        <div id="jive-body-sidebarcol">
+        <script type="text/javascript">
+            function createDocFromThread() {
+                    document.location = '/thread-to-doc.jspa;jsessionid=C5772BE1C750763D1FFE905311742F79?thread=303815';
+            }
+        </script>
+
+    <!-- BEGIN sidebar box 'ACTIONS' -->
+    <div id="jive-action-sidebar" class="jive-sidebar">
+		<div id="jive-action-sidebar-body" class="jive-sidebar-body jive-sidebar-body-actions">
+
+
+            <div id="jive-action-sidebar-tab-_thread-actions-tab"
+					class="jive-action-sidebar-tab-first"
+			>
+				<h4 id="jive-action-sidebar-tab-header_thread-actions-tab">Actions</h4>
+
+
+                <ul id="jive-action-sidebar-tab-list_thread-actions-tab" class="">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						<li id="jive-link-thread-pdf" style=""
+						><a class="jive-link-pdf"
+								href="/thread/303815.pdf;jsessionid=C5772BE1C750763D1FFE905311742F79"
+								onclick=""
+								title="">
+							View as PDF
+							</a></li>
+
+
+						<li id="jive-link-thread-print" style=""
+						><a class="jive-link-printpreview"
+								href="/thread/303815;jsessionid=C5772BE1C750763D1FFE905311742F79?decorator=print&amp;displayFullThread=true"
+								onclick=""
+								title="">
+							View print preview
+							</a></li>
+
+
+
+				</ul>
+			</div>
+
+
+	
+		</div>
+    </div>
+    <!-- END sidebar box 'ACTIONS' -->
+
+
+            
+            
+<!-- BEGIN sidebar box 'More Like This' -->
+<div class="jive-sidebar">
+    <div class="jive-sidebar-body">
+        <h4>More Like This</h4>
+        <div class="jive-sidebar-usercontent">
+            <ul id="jive-more-like-this-1-303815">
+                <li><span>Retrieving data ...</span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var msg_noContent = "No similar content found";
+    var msg_errorContent = "Unable to retrieve content from the server:";
+
+    var __objectType = 1;
+    var __objectID = 303815;
+    var __numResults = 5;
+</script>
+
+<!-- END sidebar box 'More Like This' -->
+            
+            
+
+
+
+        </div>
+        <!-- END sidebar column -->
+    </div>
+    <!-- END sidebar column container -->
+
+
+</div>
+<!-- END main body -->
+
+
+
+
+        </div>
+
+<!-- BEGIN footer -->
+<div id="jive-footer">
+        <div class="jive-footer-nav">
+            <a href="http://www.jivesoftware.com/poweredby/" target="_blank">
+JetBrains Developer Community powered by Jive Software's Clearspace &reg; 2.5.16            </a>
+
+            <div class="jiveVersion" style="display: none;">
+Jive Software Version: 90520            </div>
+
+    - <a href="http://www.jivesoftware.com/community/community/features" target="_blank">Submit product feedback</a>
+        </div>
+        <div class="jive-footer-copyright">&copy;2000-2012 JetBrains. All rights reserved</div>
+</div>
+<!-- END footer -->
+
+
+    </div>
+
+
+<div id="jiveTT-note-user" class="jive-tooltip2 notedefault snp-mouseoffset"  >
+	<div class="jive-tooltip2-top"></div>
+	<div class="jive-tooltip2-mid">
+		<div class="jive-tooltip2-mid-padding" id="jive-note-user-body"></div>
+	</div>
+	<div class="jive-tooltip2-btm"></div>
+</div>
+
+    <script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-940435-9");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+<script type="text/javascript" language="JavaScript" src="/resources/scripts/gen/35c4ad65a6a9ef5951bc8cf766f0445b.js;jsessionid=C5772BE1C750763D1FFE905311742F79"></script>
+
+<script type="text/javascript">
+zoomImagesURI   = "/resources/scripts/fancyzoom/images/;jsessionid=C5772BE1C750763D1FFE905311742F79";
+setupZoom();
+</script>
+</body>
+</html>

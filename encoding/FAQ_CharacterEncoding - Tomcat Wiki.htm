@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+
+<title>FAQ/CharacterEncoding - Tomcat Wiki</title>
+<script type="text/javascript" src="/moin_static188/common/js/common.js"></script>
+
+<script type="text/javascript">
+<!--
+var search_hint = "Search";
+//-->
+</script>
+
+
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/moin_static188/modernized/css/common.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="/moin_static188/modernized/css/screen.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="/moin_static188/modernized/css/print.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="/moin_static188/modernized/css/projection.css">
+
+<!-- css only for MS IE6/IE7 browsers -->
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/moin_static188/modernized/css/msie.css">
+<![endif]-->
+
+
+
+
+
+<link rel="Start" href="/tomcat/FrontPage">
+<link rel="Alternate" title="Wiki Markup" href="/tomcat/FAQ/CharacterEncoding?action=raw">
+<link rel="Alternate" media="print" title="Print View" href="/tomcat/FAQ/CharacterEncoding?action=print">
+<link rel="Up" href="/tomcat/FAQ">
+<link rel="Search" href="/tomcat/FindPage">
+<link rel="Index" href="/tomcat/TitleIndex">
+<link rel="Glossary" href="/tomcat/WordIndex">
+<link rel="Help" href="/tomcat/HelpOnFormatting">
+</head>
+
+<body  lang="en" dir="ltr">
+
+<div id="header">
+
+<form id="searchform" method="get" action="/tomcat/FAQ/CharacterEncoding">
+<div>
+<input type="hidden" name="action" value="fullsearch">
+<input type="hidden" name="context" value="180">
+<label for="searchinput">Search:</label>
+<input id="searchinput" type="text" name="value" value="" size="20"
+    onfocus="searchFocus(this)" onblur="searchBlur(this)"
+    onkeyup="searchChange(this)" onchange="searchChange(this)" alt="Search">
+<input id="titlesearch" name="titlesearch" type="submit"
+    value="Titles" alt="Search Titles">
+<input id="fullsearch" name="fullsearch" type="submit"
+    value="Text" alt="Search Full Text">
+</div>
+</form>
+<script type="text/javascript">
+<!--// Initialize search form
+var f = document.getElementById('searchform');
+f.getElementsByTagName('label')[0].style.display = 'none';
+var e = document.getElementById('searchinput');
+searchChange(e);
+searchBlur(e);
+//-->
+</script>
+
+<div id="logo"><a href="/tomcat/FrontPage">Tomcat Wiki</a></div>
+<div id="username"><a href="/tomcat/FAQ/CharacterEncoding?action=login" id="login" rel="nofollow">Login</a></div>
+<h1 id="locationline">
+
+<span id="pagelocation"><a href="/tomcat/FAQ">FAQ</a><span class="sep">/</span><a class="backlink" href="/tomcat/FAQ/CharacterEncoding?action=fullsearch&amp;context=180&amp;value=linkto%3A%22FAQ/CharacterEncoding%22" rel="nofollow" title="Click to do a full-text search for this title">CharacterEncoding</a></span>
+</h1>
+
+
+<ul id="navibar">
+<li class="wikilink"><a href="/tomcat/FrontPage">FrontPage</a></li><li class="wikilink"><a href="/tomcat/RecentChanges">RecentChanges</a></li><li class="wikilink"><a href="/tomcat/FindPage">FindPage</a></li><li class="wikilink"><a href="/tomcat/HelpContents">HelpContents</a></li><li class="current"><a href="/tomcat/FAQ/CharacterEncoding">FAQ/CharacterEncoding</a></li>
+</ul>
+
+<div id="pageline"><hr style="display:none;"></div>
+
+<ul class="editbar"><li><span class="disabled">Immutable Page</span></li><li class="toggleCommentsButton" style="display:none;"><a href="#" class="nbcomment" onClick="toggleComments();return false;">Comments</a></li><li><a class="nbinfo" href="/tomcat/FAQ/CharacterEncoding?action=info" rel="nofollow">Info</a></li><li>
+<form class="actionsmenu" method="GET" action="/tomcat/FAQ/CharacterEncoding">
+<div>
+    <label>More Actions:</label>
+    <select name="action"
+        onchange="if ((this.selectedIndex != 0) &&
+                      (this.options[this.selectedIndex].disabled == false)) {
+                this.form.submit();
+            }
+            this.selectedIndex = 0;">
+        <option value="raw">Raw Text</option>
+<option value="print">Print View</option>
+<option value="refresh">Delete Cache</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="SpellCheck">Check Spelling</option>
+<option value="LikePages">Like Pages</option>
+<option value="LocalSiteMap">Local Site Map</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="RenamePage" disabled class="disabled">Rename Page</option>
+<option value="CopyPage">Copy Page</option>
+<option value="DeletePage" disabled class="disabled">Delete Page</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="MyPages">My Pages</option>
+<option value="show" disabled class="disabled">Subscribe User</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="show" disabled class="disabled">Remove Spam</option>
+<option value="show" disabled class="disabled">Revert to this revision</option>
+<option value="show" disabled class="disabled">Package Pages</option>
+<option value="SyncPages">Sync Pages</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="Load">Load</option>
+<option value="Save">Save</option>
+    </select>
+    <input type="submit" value="Do">
+    
+</div>
+<script type="text/javascript">
+<!--// Init menu
+actionsMenuInit('More Actions:');
+//-->
+</script>
+</form>
+</li></ul>
+
+</div>
+
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1"></span><p class="line867">
+<h1 id="Character_Encoding_Issues">Character Encoding Issues</h1>
+<span class="anchor" id="line-2"></span><span class="anchor" id="line-3"></span><p class="line867">
+<h2 id="Questions">Questions</h2>
+<span class="anchor" id="line-4"></span><span class="anchor" id="line-5"></span><ol type="1"><li><p class="line891"><strong>Why</strong> <span class="anchor" id="line-6"></span><ol type="1"><li><p class="line891"><a href="/tomcat/FAQ/CharacterEncoding#Q1">What is the default character encoding of the request or response body?</a> <span class="anchor" id="line-7"></span></li><li><p class="line891"><a href="/tomcat/FAQ/CharacterEncoding#Q9">Why does everything have to be this way?</a> <span class="anchor" id="line-8"></span></li></ol></li><li><p class="line891"><strong>How</strong> <span class="anchor" id="line-9"></span><ol type="1"><li><p class="line891"><a href="/tomcat/FAQ/CharacterEncoding#Q2">How do I change how GET parameters are interpreted?</a> <span class="anchor" id="line-10"></span></li><li><p class="line891"><a href="/tomcat/FAQ/CharacterEncoding#Q3">How do I change how POST parameters are interpreted?</a> <span class="anchor" id="line-11"></span></li><li><p class="line891"><a href="/tomcat/FAQ/CharacterEncoding#Q8">What can you recommend to just make everything work? (How to use UTF-8 everywhere).</a> <span class="anchor" id="line-12"></span></li><li><p class="line891"><a href="/tomcat/FAQ/CharacterEncoding#Q4">How can I test if my configuration will work correctly?</a> <span class="anchor" id="line-13"></span></li><li><p class="line891"><a href="/tomcat/FAQ/CharacterEncoding#Q6">How can I send higher characters in HTTP headers?</a> <span class="anchor" id="line-14"></span></li></ol></li><li><p class="line891"><strong>Troubleshooting</strong> <span class="anchor" id="line-15"></span><ol type="1"><li><p class="line891"><a href="/tomcat/FAQ/CharacterEncoding#Q5">I'm having a problem with character encoding in Tomcat 5</a> <span class="anchor" id="line-16"></span><span class="anchor" id="line-17"></span></li></ol></li></ol><p class="line867">
+<h2 id="Answers">Answers</h2>
+<span class="anchor" id="line-18"></span><span class="anchor" id="line-19"></span><p class="line867">
+<h3 id="Why">Why</h3>
+<span class="anchor" id="line-20"></span><span class="anchor" id="line-21"></span><p class="line867"><span class="anchor" id="Q1"></span><strong>What is the default character encoding of the request or response body?</strong> <span class="anchor" id="line-22"></span><span class="anchor" id="line-23"></span><p class="line862">If a character encoding is not specified, the Servlet specification requires that an encoding of ISO-8859-1 is used. The character encoding for the body of an HTTP message (request <em>or</em> response) is specified in the <tt class="backtick">Content-Type</tt> header field. An example of such a header is <tt class="backtick">Content-Type:&nbsp;text/html;&nbsp;charset=ISO-8859-1</tt> which explicitly states that the default (ISO-8859-1) is being used. <span class="anchor" id="line-24"></span><span class="anchor" id="line-25"></span><p class="line862">References: <a class="http" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.7.1">HTTP 1.1 Specification, Section 3.7.1</a> <span class="anchor" id="line-26"></span><span class="anchor" id="line-27"></span><p class="line862">The above general rules apply to Servlets. The behaviour of JSP pages is further specified by the JSP specification. The request character encoding handling is the same, but response character encoding behaves a bit differently. See chapter "JSP.4.2 Response Character Encoding". For JSP pages in standard syntax the default response charset is the usual <tt class="backtick">ISO-8859-1</tt>, but for the ones in XML syntax it is <tt class="backtick">UTF-8</tt>. <span class="anchor" id="line-28"></span><span class="anchor" id="line-29"></span><p class="line867"><br>
+ <span class="anchor" id="line-30"></span><span class="anchor" id="line-31"></span><p class="line867"><span class="anchor" id="Q9"></span><strong>Why does everything have to be this way?</strong> <span class="anchor" id="line-32"></span><span class="anchor" id="line-33"></span><p class="line874">Everything covered in this page comes down to practical interpretation of a number of specifications. When working with Java servlets, the Java Servlet Specification is the primary reference, but the servlet spec itself relies on older specifications such as HTTP for its foundation. Here are a couple of references before we cover exactly where these items are located in them. <span class="anchor" id="line-34"></span><span class="anchor" id="line-35"></span><ol type="1"><li><p class="line891"><a class="http" href="http://jcp.org/aboutJava/communityprocess/mrel/jsr154/index2.html">Java Servlet Specification 2.5</a> <span class="anchor" id="line-36"></span></li><li><p class="line891"><a class="http" href="http://jcp.org/aboutJava/communityprocess/final/jsr154/index.html">Java Servlet Specification 2.4</a> <span class="anchor" id="line-37"></span></li><li><p class="line891"><a class="http" href="http://www.w3.org/Protocols/rfc2616/rfc2616.txt">HTTP 1.1 Protocol</a> (<a class="http" href="http://www.w3.org/Protocols/rfc2616/rfc2616.html">hyperlinked version</a>) <span class="anchor" id="line-38"></span></li><li><p class="line891"><a class="http" href="http://www.ietf.org/rfc/rfc2396.txt">URI Syntax</a> <span class="anchor" id="line-39"></span></li><li><p class="line891"><a class="http" href="http://www.w3.org/Protocols/rfc822/">ARPA Internet Text Messages</a> <span class="anchor" id="line-40"></span></li><li><p class="line891"><a class="http" href="http://www.w3.org/TR/html4">HTML 4</a> <span class="anchor" id="line-41"></span><span class="anchor" id="line-42"></span></li></ol><p class="line867"><em>Default encoding for request and response bodies</em> <span class="anchor" id="line-43"></span><span class="anchor" id="line-44"></span><p class="line874">See 'Default Encoding for POST' below. <span class="anchor" id="line-45"></span><span class="anchor" id="line-46"></span><p class="line867"><em>Default encoding for GET</em> <span class="anchor" id="line-47"></span><span class="anchor" id="line-48"></span><p class="line862">The character set for HTTP query strings (that's the technical term for 'GET parameters') can be found in sections 2 and 2.1 the "URI Syntax" specification. The character set is defined to be <a class="http" href="http://en.wikipedia.org/wiki/ASCII">US-ASCII</a>. Any character that does not map to US-ASCII must be encoded in some way. Section 2.1 of the URI Syntax specification says that characters outside of US-ASCII must be encoded using <tt class="backtick">%</tt> escape sequences: each character is encoded as a literal <tt class="backtick">%</tt> followed by the two hexadecimal codes which indicate its character code. Thus, <tt class="backtick">a</tt> (US-ASCII character code 97 = 0x61) is equivalent to <tt class="backtick">%61</tt>. There <em>is no default encoding for URIs</em> specified anywhere, which is why there is a lot of confusion when it comes to decoding these values. <span class="anchor" id="line-49"></span><span class="anchor" id="line-50"></span><p class="line874">Some notes about the character encoding of URIs: <span class="anchor" id="line-51"></span><ol type="1"><li>ISO-8859-1 and ASCII are compatible for character codes 0x20 to 0x7E, so they are often used interchangeably. Most of the web uses ISO-8859-1 as the default for query strings. <span class="anchor" id="line-52"></span></li><li>Many browsers are starting to offer (default) options of encoding URIs using UTF-8 instead of ISO-8859-1. Some browsers appear to use the encoding of the current page to encode URIs for links (see the note above regarding browser behavior for POST encoding). <span class="anchor" id="line-53"></span></li><li><p class="line891"><a class="http" href="http://www.w3.org/TR/html40/appendix/notes.html#non-ascii-chars">HTML 4.0</a> recommends the use of UTF-8 to encode the query string. <span class="anchor" id="line-54"></span></li><li>When in doubt, use POST for any data you think might have problems surviving a trip through the query string. <span class="anchor" id="line-55"></span><span class="anchor" id="line-56"></span></li></ol><p class="line867"><em>Default Encoding for POST</em> <span class="anchor" id="line-57"></span><span class="anchor" id="line-58"></span><p class="line867"><a class="http" href="http://en.wikipedia.org/wiki/Iso-8859-1">ISO-8859-1</a> is defined as the default character set for HTTP request and response bodies in the servlet specification (request encoding: section 4.9 for spec version 2.4, section 3.9 for spec version 2.5; response encoding: section 5.4 for both spec versions 2.4 and 2.5). This default is historical: it comes from sections 3.4.1 and 3.7.1 of the HTTP/1.1 specification. <span class="anchor" id="line-59"></span><span class="anchor" id="line-60"></span><p class="line874">Some notes about the character encoding of a POST request: <span class="anchor" id="line-61"></span><ol type="1"><li><p class="line862">Section 3.4.1 of HTTP/1.1 states that recipients of an HTTP message <em>must</em> respect the character encoding specified by the sender in the <tt class="backtick">Content-Type</tt> header if the encoding is supported. A missing character allows the recipient to "guess" what encoding is appropriate. <span class="anchor" id="line-62"></span></li><li><p class="line862">Most web browsers today <em>do not</em> specify the character set of a request, even when it is something other than ISO-8859-1. This seems to be in violation of the HTTP specification. Most web browsers appear to send a request body using the encoding of the page used to generate the POST (for instance, the &lt;form&gt; element came from a page with a specific encoding... it is <em>that</em> encoding which is used to submit the POST data for that form). <span class="anchor" id="line-63"></span><span class="anchor" id="line-64"></span></li></ol><p class="line867"><em>HTTP Headers</em> <span class="anchor" id="line-65"></span><span class="anchor" id="line-66"></span><p class="line874">Section 3.1 of the ARPA Internet Text Messages spec states that headers are always in US-ASCII encoding. Anything outside of that needs to be encoded. See the section above regarding query strings in URIs. <span class="anchor" id="line-67"></span><span class="anchor" id="line-68"></span><span class="anchor" id="line-69"></span><span class="anchor" id="line-70"></span><p class="line867">
+<h3 id="How">How</h3>
+<span class="anchor" id="line-71"></span><span class="anchor" id="line-72"></span><p class="line867"><span class="anchor" id="Q2"></span><strong>How do I change how GET parameters are interpreted?</strong> <span class="anchor" id="line-73"></span><span class="anchor" id="line-74"></span><p class="line874">Tomcat will use ISO-8859-1 as the default character encoding of the entire URL, including the query string ("GET parameters"). <span class="anchor" id="line-75"></span><span class="anchor" id="line-76"></span><p class="line874">There are two ways to specify how GET parameters are interpreted: <span class="anchor" id="line-77"></span><span class="anchor" id="line-78"></span><ol type="1"><li><p class="line862">Set the <tt class="backtick">URIEncoding</tt> attribute on the &lt;Connector&gt; element in server.xml to something specific (e.g. <tt class="backtick">URIEncoding="UTF-8"</tt>). <span class="anchor" id="line-79"></span></li><li><p class="line862">Set the <tt class="backtick">useBodyEncodingForURI</tt> attribute on the &lt;Connector&gt; element in server.xml to <tt class="backtick">true</tt>. This will cause the Connector to use the request body's encoding for GET parameters. <span class="anchor" id="line-80"></span><span class="anchor" id="line-81"></span></li></ol><p class="line862">References: <a class="http" href="http://tomcat.apache.org/tomcat-7.0-doc/config/http.html">Tomcat 7 HTTP Connector</a>, <a class="http" href="http://tomcat.apache.org/tomcat-7.0-doc/config/ajp.html">Tomcat 7 AJP Connector</a> <span class="anchor" id="line-82"></span><span class="anchor" id="line-83"></span><span class="anchor" id="line-84"></span><p class="line867"><br>
+ <span class="anchor" id="line-85"></span><span class="anchor" id="line-86"></span><p class="line867"><span class="anchor" id="Q3"></span><strong>How do I change how POST parameters are interpreted?</strong> <span class="anchor" id="line-87"></span><span class="anchor" id="line-88"></span><p class="line874">POST requests should specify the encoding of the parameters and values they send. Since many clients fail to set an explicit encoding, the default is used (ISO-8859-1). In many cases this is not the preferred interpretation so one can employ a javax.servlet.Filter to set request encodings. Writing such a filter is trivial. Furthermore Tomcat already comes with such an example filter. Please take a look at: <span class="anchor" id="line-89"></span><dl><dt>5.x</dt><dd><span class="anchor" id="line-90"></span></dd></dl><p class="line867"><span class="anchor" id="line-91"></span><span class="anchor" id="line-92"></span><span class="anchor" id="line-93"></span><pre>webapps/servlets-examples/WEB-INF/classes/filters/SetCharacterEncodingFilter.java
+webapps/jsp-examples/WEB-INF/classes/filters/SetCharacterEncodingFilter.java</pre><span class="anchor" id="line-94"></span><dl><dt>6.x</dt><dd><span class="anchor" id="line-95"></span></dd></dl><p class="line867"><span class="anchor" id="line-96"></span><span class="anchor" id="line-97"></span><pre>webapps/examples/WEB-INF/classes/filters/SetCharacterEncodingFilter.java</pre><span class="anchor" id="line-98"></span><dl><dt>5.5.36+, 6.0.36+, 7.x</dt><dd><span class="anchor" id="line-99"></span></dd></dl><p class="line874">Since 7.0.20 the filter became first-class citizen and was moved from the examples into core Tomcat and is available to any web application without the need to compile and bundle it separately. <span class="anchor" id="line-100"></span>See documentation for the list of <a class="http" href="http://tomcat.apache.org/tomcat-7.0-doc/config/filter.html">filters</a> provided by Tomcat. The class name is: <span class="anchor" id="line-101"></span><span class="anchor" id="line-102"></span><span class="anchor" id="line-103"></span><pre>org.apache.catalina.filters.SetCharacterEncodingFilter</pre><span class="anchor" id="line-104"></span><span class="anchor" id="line-105"></span><p class="line874">It was also ported to older Tomcat versions and is available there starting with versions 5.5.36 and 6.0.36. (not yet released at the time of this writing) <span class="anchor" id="line-106"></span><span class="anchor" id="line-107"></span><p class="line867"><em><strong>Note</strong></em>: The request encoding setting is effective only if it is done earlier than parameters are parsed. Once parsing happens, there is no way back. Parameters parsing is triggered by the first method that asks for parameter name or value. Make sure that the filter is positioned before any other filters that ask for request parameters. The positioning depends on the order of <tt class="backtick">filter-mapping</tt> declarations in the WEB-INF/web.xml file, though since Servlet 3.0 specification there are additional options to control the order. To check the actual order you can throw an Exception from your page and check its stack trace for filter names. <span class="anchor" id="line-108"></span><span class="anchor" id="line-109"></span><span class="anchor" id="line-110"></span><p class="line867"><br>
+ <span class="anchor" id="line-111"></span><span class="anchor" id="line-112"></span><p class="line867"><span class="anchor" id="Q8"></span><strong>What can you recommend to just make everything work? (How to use UTF-8 everywhere).</strong> <span class="anchor" id="line-113"></span><span class="anchor" id="line-114"></span><p class="line862">Using <tt class="backtick">UTF-8</tt> as your character encoding for everything is a safe bet. This should work for pretty much every situation. <span class="anchor" id="line-115"></span><span class="anchor" id="line-116"></span><p class="line874">In order to completely switch to using UTF-8, you need to make the following changes: <span class="anchor" id="line-117"></span><span class="anchor" id="line-118"></span><ol type="1"><li><p class="line862">Set <tt>URIEncoding="UTF-8"</tt> on your &lt;Connector&gt; in <tt class="backtick">server.xml</tt>. References: <a class="http" href="http://tomcat.apache.org/tomcat-7.0-doc/config/http.html">HTTP Connector</a>, <a class="http" href="http://tomcat.apache.org/tomcat-7.0-doc/config/ajp.html">AJP Connector</a>. <span class="anchor" id="line-119"></span></li><li><p class="line862">Use a <a href="/tomcat/FAQ/CharacterEncoding#Q3">character encoding filter</a> with the default encoding set to UTF-8 <span class="anchor" id="line-120"></span></li><li>Change all your JSPs to include charset name in their contentType. <span class="anchor" id="line-121"></span><p class="line862">For example, use <tt>&lt;%@page&nbsp;contentType="text/html;&nbsp;charset=UTF-8"&nbsp;%&gt;</tt> for the usual JSP pages and <tt>&lt;jsp:directive.page&nbsp;contentType="text/html;&nbsp;charset=UTF-8"&nbsp;/&gt;</tt> for the pages in XML syntax (aka JSP Documents). <span class="anchor" id="line-122"></span></li><li>Change all your servlets to set the content type for responses and to include charset name in the content type to be UTF-8. <span class="anchor" id="line-123"></span><p class="line862">Use <tt>response.setContentType("text/html;&nbsp;charset=UTF-8")</tt> or <tt>response.setCharacterEncoding("UTF-8")</tt>. <span class="anchor" id="line-124"></span></li><li>Change any content-generation libraries you use (Velocity, Freemarker, etc.) to use UTF-8 and to specify UTF-8 in the content type of the responses that they generate. <span class="anchor" id="line-125"></span></li><li><p class="line862">Disable any valves or filters that may read request parameters before your character encoding filter or jsp page has a chance to set the encoding to UTF-8.  For more information see <a class="http" href="http://www.mail-archive.com/users@tomcat.apache.org/msg21117.html">http://www.mail-archive.com/users@tomcat.apache.org/msg21117.html</a>. <span class="anchor" id="line-126"></span><span class="anchor" id="line-127"></span><span class="anchor" id="line-128"></span></li></ol><p class="line867"><br>
+ <span class="anchor" id="line-129"></span><span class="anchor" id="line-130"></span><p class="line867"><span class="anchor" id="Q4"></span><strong>How can I test if my configuration will work correctly?</strong> <span class="anchor" id="line-131"></span><span class="anchor" id="line-132"></span><p class="line874">The following sample JSP should work on a clean Tomcat install for any input. If you set the URIEncoding="UTF-8" on the connector, it will also work with method="GET". <span class="anchor" id="line-133"></span><span class="anchor" id="line-134"></span><span class="anchor" id="line-135"></span><span class="anchor" id="line-136"></span><span class="anchor" id="line-137"></span><span class="anchor" id="line-138"></span><span class="anchor" id="line-139"></span><span class="anchor" id="line-140"></span><span class="anchor" id="line-141"></span><span class="anchor" id="line-142"></span><span class="anchor" id="line-143"></span><span class="anchor" id="line-144"></span><span class="anchor" id="line-145"></span><span class="anchor" id="line-146"></span><span class="anchor" id="line-147"></span><span class="anchor" id="line-148"></span><span class="anchor" id="line-149"></span><span class="anchor" id="line-150"></span><span class="anchor" id="line-151"></span><span class="anchor" id="line-152"></span><span class="anchor" id="line-153"></span><span class="anchor" id="line-154"></span><span class="anchor" id="line-155"></span><pre>&lt;%@ page contentType="text/html; charset=UTF-8" %&gt;
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"&gt;
+&lt;html&gt;
+   &lt;head&gt;
+     &lt;title&gt;Character encoding test page&lt;/title&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+     &lt;p&gt;Data posted to this form was:
+     &lt;%
+       request.setCharacterEncoding("UTF-8");
+       out.print(request.getParameter("mydata"));
+     %&gt;
+
+     &lt;/p&gt;
+     &lt;form method="POST" action="index.jsp"&gt;
+       &lt;input type="text" name="mydata"&gt;
+       &lt;input type="submit" value="Submit" /&gt;
+       &lt;input type="reset" value="Reset" /&gt;
+     &lt;/form&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</pre><span class="anchor" id="line-156"></span><span class="anchor" id="line-157"></span><span class="anchor" id="line-158"></span><p class="line867"><br>
+ <span class="anchor" id="line-159"></span><span class="anchor" id="line-160"></span><p class="line867"><span class="anchor" id="Q6"></span><strong>How can I send higher characters in my HTTP headers?</strong> <span class="anchor" id="line-161"></span><span class="anchor" id="line-162"></span><p class="line862">You have to encode them in some way before you insert them into a header. Using url-encoding (<tt class="backtick">%</tt> + high byte number + low byte number) would be a good idea. <span class="anchor" id="line-163"></span><span class="anchor" id="line-164"></span><span class="anchor" id="line-165"></span><span class="anchor" id="line-166"></span><p class="line867">
+<h3 id="Troubleshooting">Troubleshooting</h3>
+<span class="anchor" id="line-167"></span><span class="anchor" id="line-168"></span><p class="line867"><span class="anchor" id="Q5"></span><strong>I'm having a problem with character encoding in Tomcat 5</strong> <span class="anchor" id="line-169"></span><span class="anchor" id="line-170"></span><p class="line874">In Tomcat 5 - there have been issues reported with respect to character encoding (usually of the the form "request.setCharacterEncoding(String) doesn't work"). Odds are, its not a bug. Before filing a bug report, see these bug reports as well as any bug reports linked to these bug reports: <span class="anchor" id="line-171"></span><span class="anchor" id="line-172"></span><ul><li><p class="line891"><a class="http" href="http://issues.apache.org/bugzilla/show_bug.cgi?id=23929">23929</a> <span class="anchor" id="line-173"></span></li><li><p class="line891"><a class="http" href="http://issues.apache.org/bugzilla/show_bug.cgi?id=25360">25360</a> <span class="anchor" id="line-174"></span></li><li><p class="line891"><a class="http" href="http://issues.apache.org/bugzilla/show_bug.cgi?id=25231">25231</a> <span class="anchor" id="line-175"></span></li><li><p class="line891"><a class="http" href="http://issues.apache.org/bugzilla/show_bug.cgi?id=25235">25235</a> <span class="anchor" id="line-176"></span></li><li><p class="line891"><a class="http" href="http://issues.apache.org/bugzilla/show_bug.cgi?id=22666">22666</a> <span class="anchor" id="line-177"></span></li><li><p class="line891"><a class="http" href="http://issues.apache.org/bugzilla/show_bug.cgi?id=24557">24557</a> <span class="anchor" id="line-178"></span></li><li><p class="line891"><a class="http" href="http://issues.apache.org/bugzilla/show_bug.cgi?id=24345">24345</a> <span class="anchor" id="line-179"></span></li><li><p class="line891"><a class="http" href="http://issues.apache.org/bugzilla/show_bug.cgi?id=25848">25848</a> <span class="anchor" id="line-180"></span><span class="anchor" id="line-181"></span></li></ul><p class="line867"><hr /><p class="line874"> <span class="anchor" id="line-182"></span><a href="/tomcat/CategoryFAQ">CategoryFAQ</a> <span class="anchor" id="line-183"></span><span class="anchor" id="bottom"></span></div><p id="pageinfo" class="info" lang="en" dir="ltr">FAQ/CharacterEncoding  (last edited 2013-01-30 00:14:48 by <span title="KonstantinKolinko @ 81.3.170.136[81.3.170.136]"><a class="nonexistent" href="/tomcat/KonstantinKolinko" title="KonstantinKolinko @ 81.3.170.136[81.3.170.136]">KonstantinKolinko</a></span>)</p>
+
+<div id="pagebottom"></div>
+</div>
+
+
+<div id="footer">
+<ul class="editbar"><li><span class="disabled">Immutable Page</span></li><li class="toggleCommentsButton" style="display:none;"><a href="#" class="nbcomment" onClick="toggleComments();return false;">Comments</a></li><li><a class="nbinfo" href="/tomcat/FAQ/CharacterEncoding?action=info" rel="nofollow">Info</a></li><li>
+<form class="actionsmenu" method="GET" action="/tomcat/FAQ/CharacterEncoding">
+<div>
+    <label>More Actions:</label>
+    <select name="action"
+        onchange="if ((this.selectedIndex != 0) &&
+                      (this.options[this.selectedIndex].disabled == false)) {
+                this.form.submit();
+            }
+            this.selectedIndex = 0;">
+        <option value="raw">Raw Text</option>
+<option value="print">Print View</option>
+<option value="refresh">Delete Cache</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="SpellCheck">Check Spelling</option>
+<option value="LikePages">Like Pages</option>
+<option value="LocalSiteMap">Local Site Map</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="RenamePage" disabled class="disabled">Rename Page</option>
+<option value="CopyPage">Copy Page</option>
+<option value="DeletePage" disabled class="disabled">Delete Page</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="MyPages">My Pages</option>
+<option value="show" disabled class="disabled">Subscribe User</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="show" disabled class="disabled">Remove Spam</option>
+<option value="show" disabled class="disabled">Revert to this revision</option>
+<option value="show" disabled class="disabled">Package Pages</option>
+<option value="SyncPages">Sync Pages</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="Load">Load</option>
+<option value="Save">Save</option>
+    </select>
+    <input type="submit" value="Do">
+    
+</div>
+<script type="text/javascript">
+<!--// Init menu
+actionsMenuInit('More Actions:');
+//-->
+</script>
+</form>
+</li></ul>
+
+<ul id="credits">
+<li><a href="http://moinmo.in/" title="This site uses the MoinMoin Wiki software.">MoinMoin Powered</a></li><li><a href="http://moinmo.in/Python" title="MoinMoin is written in Python.">Python Powered</a></li><li><a href="http://moinmo.in/GPL" title="MoinMoin is GPL licensed.">GPL licensed</a></li><li><a href="http://validator.w3.org/check?uri=referer" title="Click here to validate this page.">Valid HTML 4.01</a></li>
+</ul>
+
+
+</div>
+</body>
+</html>
+

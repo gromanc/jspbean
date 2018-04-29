@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:addthis="http://www.addthis.com/help/api-spec" >
+<head>
+<meta charset="UTF-8" />
+
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="shortcut icon" href="/articles/wp-content/themes/jvmhost/images/jvm.png" type="image/png" />
+<link rel="stylesheet" type="text/css" media="all" href="http://blog.jvmhost.com/articles/wp-content/themes/jvmhost/style.css" />
+<link rel="pingback" href="http://blog.jvmhost.com/articles/xmlrpc.php" />
+
+<!-- This site is optimized with the Yoast WordPress SEO plugin v1.3.4.4 - http://yoast.com/wordpress/seo/ -->
+<title>How to use Unicode (UTF-8) with Tomcat, Java, MySQL and JDBC?</title>
+<meta name="description" content="Connect Unicode (UTF-8) with Tomcat, Java, MySQL and JDBC"/>
+<meta name="keywords" content="unicode, utf-8, mysql connector, jdbc, connector/j, tomcat, com.mysql.jdbc.Driver, URIEncoding, java hosting"/>
+<link rel="canonical" href="http://www.jvmhost.com/articles/tomcat-java-mysql-jdbc-and-unicode" />
+<!-- / Yoast WordPress SEO plugin. -->
+
+<link rel="alternate" type="application/rss+xml" title="JVM Host Blog &raquo; Feed" href="http://www.jvmhost.com/articles/feed" />
+<link rel="alternate" type="application/rss+xml" title="JVM Host Blog &raquo; Comments Feed" href="http://www.jvmhost.com/articles/comments/feed" />
+<link rel="alternate" type="application/rss+xml" title="JVM Host Blog &raquo; How to use Unicode (UTF-8) with Tomcat, Java, MySQL and JDBC? Comments Feed" href="http://www.jvmhost.com/articles/tomcat-java-mysql-jdbc-and-unicode/feed" />
+<link rel='stylesheet' id='cptchStylesheet-css'  href='http://blog.jvmhost.com/articles/wp-content/plugins/captcha/css/style.css' type='text/css' media='all' />
+<script type='text/javascript' src='http://blog.jvmhost.com/articles/wp-includes/js/comment-reply.js'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://blog.jvmhost.com/articles/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://blog.jvmhost.com/articles/wp-includes/wlwmanifest.xml" /> 
+
+<link rel='shortlink' href='http://www.jvmhost.com/articles/?p=172' />
+<script charset="utf-8" type="text/javascript">var switchTo5x=true;</script><script charset="utf-8" type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'wp.512e680e-fe68-43d5-ba28-dee0fc56576d'});var st_type='wordpress3.4.1';</script></head>
+
+<body class="single single-post postid-172 single-format-standard">
+<div id="wrapper" class="hfeed">
+
+	<div id="header">
+
+<!--	<div id="mainpart"> -->
+	    <div style="position:absolute;z-index:113;">
+				    <a href="http://www.jvmhost.com/features"><img id="banner" src="/articles/wp-content/themes/jvmhost/images/banner3.gif" alt="Current promotions and discounts at JVMHost!" title="Current promotions and discounts at JVMHost!" /></a>
+			    </div>
+	    <div id="si_nagl" style="position:relative;z-index:112;">
+		<a href="http://www.jvmhost.com/"><img id="logo" src="/articles/wp-content/themes/jvmhost/images/logo.gif" alt="JVMHost Home Page" title="JVMHost Home Page" /></a>  
+		<a href="http://www.jvmhost.com/"><img id="motto" src="/articles/wp-content/themes/jvmhost/images/jvmhost.jpg" alt="JVMHost - affordable, automated and rock-solid java hosting" title="JVMHost - affordable, automated and rock-solid Java hosting" /></a>
+		<img id="phone" src="/articles/wp-content/themes/jvmhost/images/phone.gif" />
+	    </div> 
+	    <div class="clear"></div>
+<!--        </div>  -->
+
+
+
+	</div><!-- #header -->
+
+<!-- <div style="overflow:hidden;margin-top:-1px"> -->
+	    <div id="mainmenu">
+		<a href="/">Portal Home</a>
+                <span class="separator"></span> 
+                <a href="/highlights"
+                >Highlights</a>
+	        <span class="separator"></span>
+                <a href="/features"
+                >Features</a>
+                <span class="separator"></span>
+	        <a href="/news">News</a>
+	        <span class="separator"></span>
+                <a href="/articles"
+                class="active">Articles</a>
+                <span class="separator"></span> 
+		<a href="/cart">Order</a>
+	        <span class="separator"></span>
+                <a href="/clientarea">Client Area</a>
+                <span class="separator"></span>
+                <a href="/support">Support</a>
+                <span class="separator"></span>
+		<a href="/affiliates/">Affiliates</a>
+
+		<div class="chatstatus">
+<a href="javascript:void(window.open('https://livesupport.nodecluster.net/chat.php?intgroup=U3VwcG9ydA==&amp;hg=Pw__&amp;code=SlZNSG9zdA__','','width=590,height=610,left=0,top=0,resizable=yes,menubar=no,location=no,status=yes,scrollbars=yes'))"><img src="https://livesupport.nodecluster.net/image.php?id=04&amp;type=inlay&amp;hg=Pw__&amp;intgroup=U3VwcG9ydA==" width="135" height="38" border="0" alt="LiveZilla Live Help"></a>
+<div id="livezilla_tracking" style="display:none"></div><script type="text/javascript">
+var script = document.createElement("script");script.type="text/javascript";var src = "https://livesupport.nodecluster.net/server.php?request=track&output=jcrpt&code=SlZNSG9zdA__&nse="+Math.random();setTimeout("script.src=src;document.getElementById('livezilla_tracking').appendChild(script)",1);</script><noscript><img src="https://livesupport.nodecluster.net/server.php?request=track&amp;output=nojcrpt&amp;code=SlZNSG9zdA__" width="0" height="0" style="visibility:hidden;" alt=""></noscript>
+		</div>            
+
+            </div>
+
+<!-- </div> -->
+
+
+	<div id="main">
+
+		<div id="container">
+			<div id="content" role="main">
+
+			
+
+				<div id="nav-above" class="navigation">
+					<div class="nav-previous"><a href="http://www.jvmhost.com/articles/java-and-timezones" rel="prev"><span class="meta-nav">&larr;</span> How to use timezones with Java Virtual Machine?</a></div>
+					<div class="nav-next"><a href="http://www.jvmhost.com/articles/tomcat-java-postgresql-jdbc-and-unicode" rel="next">How to use Unicode (UTF-8) with Tomcat, Java, PostgreSQL and JDBC? <span class="meta-nav">&rarr;</span></a></div>
+				</div><!-- #nav-above -->
+
+				<div id="post-172" class="post-172 post type-post status-publish format-standard hentry category-databases category-java category-tomcat">
+					<h1 class="entry-title">How to use Unicode (UTF-8) with Tomcat, Java, MySQL and JDBC?</h1>
+
+					<div class="entry-meta">
+						<span class="meta-prep meta-prep-author">Posted on</span> <a href="http://www.jvmhost.com/articles/tomcat-java-mysql-jdbc-and-unicode" title="11:09 am" rel="bookmark"><span class="entry-date">September 12, 2011</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="http://www.jvmhost.com/articles/author/admin" title="View all posts by admin">admin</a></span>					</div><!-- .entry-meta -->
+
+					<div class="entry-content">
+						<p>I will show you on a real example where we will create a simple page with form to enter Unicode strings and display them. The strings will be saved to MySQL database. We will create UTF-8 database and use JDBC to connect to it from our JSP code. Let&#8217;s go!</p>
+<p>Create a Unicode database and a database user using cPanel or command line (if you have superuser access). JVM Host provides cPanel to our clients.</p>
+<pre>mysql&gt; create database unicode character set utf8 COLLATE utf8_bin;
+mysql&gt; create user unicode@localhost IDENTIFIED BY 'mypass123';
+mysql&gt; grant all on unicode.* to unicode@localhost;
+mysql&gt; flush privileges;
+mysql&gt; use unicode;
+mysql&gt; create table person (name text);
+mysql&gt; \q</pre>
+<p>MySQL Connector/J driver connection string has the form of &#8220;jdbc:mysql://[hostname]:[port]/[db_name]&#8220;. You can find the driver on MySQL website at http://www.mysql.com/products/connector/j/. Put J/Connector into your Tomcat lib directory e.g. ~/apache-tomcat-7.0.5/lib/mysql-connector-java-5.1.16-bin.jar so that we can use JDBC classes for connecting to MySQL. You may want to restart Tomcat for the classes to be visible server wide. JVM Host clients can use JVMCP control panel for restarting their application server.</p>
+<p>Now put the following index.jsp to one of your Tomcat webapps. In our example we put it into ~/apache-tomcat-7.0.5/webapps/ROOT for easy access at root URL of our testing domain. There are a few places in the code where UTF-8 is referenced.</p>
+<pre>&lt;%@page pageEncoding="UTF-8" language="java" import="java.sql.*"%&gt;
+&lt;%@page contentType="text/html;charset=UTF-8"%&gt;
+&lt;html&gt;&lt;head&gt;&lt;META http-equiv="Content-Type" content="text/html;charset=UTF-8"&gt;&lt;/head&gt;&lt;body&gt;
+
+&lt;%
+ try{
+    request.setCharacterEncoding("UTF-8");
+  } catch(Exception e) {}
+
+  out.println("encoding is "+request.getCharacterEncoding());
+  out.println("&lt;br/&gt;testing unicode string is 'Miłością'");
+  out.println("&lt;br/&gt;request.getLocale() is "+request.getLocale());
+  out.println("&lt;br/&gt;response.getLocale() is "+response.getLocale());
+
+  String name = (String)request.getParameter("name");
+
+  java.sql.Connection conn = null;
+  try {
+    Class.forName("com.mysql.jdbc.Driver").newInstance();
+    String jdbc = "jdbc:mysql://localhost/unicode?user=unicode&amp;password=mypass123";
+    String jdbcutf8 = "&amp;useUnicode=true&amp;characterEncoding=UTF-8";
+    conn = DriverManager.getConnection(jdbc+jdbcutf8);
+    String sql = "SELECT name FROM person";
+    Statement st = conn.createStatement();
+
+    if(name != null){
+// uncomment below line if URIEncoding="UTF-8" is not set in Connector in server.xml
+//      name = new String(request.getParameter("name").getBytes("ISO-8859-1"), "UTF-8");
+// comment out below line if URIEncoding="UTF-8" is not set in Connector in server.xml
+      name = new String(request.getParameter("name"));
+      out.println("&lt;br/&gt;parameter sent is "+name); 
+      String sqlInsert = "INSERT INTO person SET name='"+name+"'";
+      out.println("&lt;br/&gt;sqlInsert="+sqlInsert);
+      st.execute(sqlInsert);
+    }
+
+    ResultSet rs = st.executeQuery(sql);
+    out.println("&lt;hr&gt;");
+    while(rs.next()) { out.print( rs.getObject(1) + "&lt;br/&gt;"); }
+
+  conn.close();
+  } catch( Exception ex ) { ex.printStackTrace( new java.io.PrintWriter(out)); }
+
+  %&gt;
+
+  &lt;hr&gt;    
+  &lt;form method="GET" action="index.jsp" accept-charset="UTF-8"&gt;
+    &lt;input type="text" name="name" size="20"&gt;&lt;input type="submit" value="Submit" name="Submit"&gt;&lt;/p&gt;
+  &lt;/form&gt;   
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+<p>You can then access and try the form at your root URL e.g. http://username.jvmhost.net/ or http://username.jvmhost.net:HTTPPORTNUMBER/ if you have an account with JVM Host. By default request parameters and values are ISO-8859-1 encoded so you may need to decode them with</p>
+<pre>name = new String(request.getParameter("name").getBytes("ISO-8859-1"), "UTF-8");</pre>
+<p>Alternatively, you can tell Tomcat to to do the encoding/decoding for you using URIEncoding=&#8221;UTF-8&#8243;. Below this setting is activated for both HTTP and AJP connectors as both are used by default at JVM Host. You can add URIEncoding in server.xml.</p>
+<pre>&lt;Connector port="10104" protocol="AJP/1.3" redirectPort="10105" URIEncoding="UTF-8" /&gt;
+&lt;Connector port="10106" protocol="HTTP/1.1" 
+    connectionTimeout="20000" redirectPort="10105" URIEncoding="UTF-8" /&gt;</pre>
+<p>With this setting active you can just use</p>
+<pre>name = new String(request.getParameter("name"));</pre>
+<p>This way you can have any international characters hardcoded in your pages display correctly. Also international characters sent to database via the form are read back and displayed correctly.</p>
+<p><span class='st_facebook' st_title='How to use Unicode (UTF-8) with Tomcat, Java, MySQL and JDBC?' st_url='http://www.jvmhost.com/articles/tomcat-java-mysql-jdbc-and-unicode'></span><span class='st_twitter' st_title='How to use Unicode (UTF-8) with Tomcat, Java, MySQL and JDBC?' st_url='http://www.jvmhost.com/articles/tomcat-java-mysql-jdbc-and-unicode'></span><span class='st_linkedin' st_title='How to use Unicode (UTF-8) with Tomcat, Java, MySQL and JDBC?' st_url='http://www.jvmhost.com/articles/tomcat-java-mysql-jdbc-and-unicode'></span><span class='st_digg' st_title='How to use Unicode (UTF-8) with Tomcat, Java, MySQL and JDBC?' st_url='http://www.jvmhost.com/articles/tomcat-java-mysql-jdbc-and-unicode'></span><span class='st_delicious' st_title='How to use Unicode (UTF-8) with Tomcat, Java, MySQL and JDBC?' st_url='http://www.jvmhost.com/articles/tomcat-java-mysql-jdbc-and-unicode'></span><span class='st_stumbleupon' st_title='How to use Unicode (UTF-8) with Tomcat, Java, MySQL and JDBC?' st_url='http://www.jvmhost.com/articles/tomcat-java-mysql-jdbc-and-unicode'></span><span class='st_reddit' st_title='How to use Unicode (UTF-8) with Tomcat, Java, MySQL and JDBC?' st_url='http://www.jvmhost.com/articles/tomcat-java-mysql-jdbc-and-unicode'></span><span class='st_sharethis' st_title='How to use Unicode (UTF-8) with Tomcat, Java, MySQL and JDBC?' st_url='http://www.jvmhost.com/articles/tomcat-java-mysql-jdbc-and-unicode'></span></p><div><a class="addthis_button" href="//addthis.com/bookmark.php?v=300" addthis:url='http://www.jvmhost.com/articles/tomcat-java-mysql-jdbc-and-unicode' addthis:title='How to use Unicode (UTF-8) with Tomcat, Java, MySQL and JDBC? '><img src="//cache.addthis.com/cachefly/static/btn/v2/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" style="border:0"/></a></div>											</div><!-- .entry-content -->
+
+
+					<div class="entry-utility">
+						This entry was posted in <a href="http://www.jvmhost.com/articles/category/databases" title="View all posts in Databases" rel="category tag">Databases</a>, <a href="http://www.jvmhost.com/articles/category/java" title="View all posts in Java" rel="category tag">Java</a>, <a href="http://www.jvmhost.com/articles/category/tomcat" title="View all posts in Tomcat" rel="category tag">Tomcat</a>. Bookmark the <a href="http://www.jvmhost.com/articles/tomcat-java-mysql-jdbc-and-unicode" title="Permalink to How to use Unicode (UTF-8) with Tomcat, Java, MySQL and JDBC?" rel="bookmark">permalink</a>.											</div><!-- .entry-utility -->
+				</div><!-- #post-## -->
+
+				<div id="nav-below" class="navigation">
+					<div class="nav-previous"><a href="http://www.jvmhost.com/articles/java-and-timezones" rel="prev"><span class="meta-nav">&larr;</span> How to use timezones with Java Virtual Machine?</a></div>
+					<div class="nav-next"><a href="http://www.jvmhost.com/articles/tomcat-java-postgresql-jdbc-and-unicode" rel="next">How to use Unicode (UTF-8) with Tomcat, Java, PostgreSQL and JDBC? <span class="meta-nav">&rarr;</span></a></div>
+				</div><!-- #nav-below -->
+
+				
+			<div id="comments">
+
+
+
+
+								<div id="respond">
+				<h3 id="reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/articles/tomcat-java-mysql-jdbc-and-unicode#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="http://blog.jvmhost.com/articles/wp-comments-post.php" method="post" id="commentform">
+																			<p class="comment-notes">Your email address will not be published. Required fields are marked <span class="required">*</span></p>							<p class="comment-form-author"><label for="author">Name</label> <span class="required">*</span><input id="author" name="author" type="text" value="" size="30" aria-required='true' /></p>
+<p class="comment-form-email"><label for="email">Email</label> <span class="required">*</span><input id="email" name="email" type="text" value="" size="30" aria-required='true' /></p>
+<p class="comment-form-url"><label for="url">Website</label><input id="url" name="url" type="text" value="" size="30" /></p>
+<p class="cptch_block"><br />	<input type="hidden" name="cptch_result" value="kvQ=" /><input type="hidden" value="Version: 2.26" />
+	<input type="text" name="cptch_number" value="" maxlength="2" size="2" style="width:20px;margin-bottom:0;display:inline;font-size: 12px;width: 30px;" /> &#43; 7 =  sixteen</p>												<p class="comment-form-comment"><label for="comment">Comment</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>						<p class="form-allowed-tags">You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:  <code>&lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; </code></p>						<p class="form-submit">
+							<input name="submit" type="submit" id="submit" value="Post Comment" />
+							<input type='hidden' name='comment_post_ID' value='172' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+						</p>
+											</form>
+							</div><!-- #respond -->
+						
+</div><!-- #comments -->
+
+
+			</div><!-- #content -->
+		</div><!-- #container -->
+
+
+		<div id="primary" class="widget-area" role="complementary">
+			<ul class="xoxo">
+
+<li id="search-2" class="widget-container widget_search"><form role="search" method="get" id="searchform" action="http://www.jvmhost.com/articles/" >
+	<div><label class="screen-reader-text" for="s">Search for:</label>
+	<input type="text" value="" name="s" id="s" />
+	<input type="submit" id="searchsubmit" value="Search" />
+	</div>
+	</form></li>		<li id="recent-posts-2" class="widget-container widget_recent_entries">		<h3 class="widget-title">Recent Posts</h3>		<ul>
+				<li><a href="http://www.jvmhost.com/articles/how-to-existing-pem-openssl-key-cerificate-java-keystore" title="How to use your existing PEM/OpenSSL key and cerificate with Java keystore">How to use your existing PEM/OpenSSL key and cerificate with Java keystore</a></li>
+				<li><a href="http://www.jvmhost.com/articles/hibernate-famous-communications-link-failure-last-packet-sent-successfuly-issue-solved-c3p0" title="Hibernate and the famous &#8216;Communications link failure&#8217; and &#8216;last packet sent successfuly&#8217; issue solved with C3P0">Hibernate and the famous &#8216;Communications link failure&#8217; and &#8216;last packet sent successfuly&#8217; issue solved with C3P0</a></li>
+				<li><a href="http://www.jvmhost.com/articles/bind-chroot-nameserver-install-centos-5" title="BIND chrooted nameserver install in Centos 5 &#8211; copy and paste guide">BIND chrooted nameserver install in Centos 5 &#8211; copy and paste guide</a></li>
+				<li><a href="http://www.jvmhost.com/articles/lightweight-nameserver-dnsmasq" title="Your own lightweight nameserver with DNSmasq">Your own lightweight nameserver with DNSmasq</a></li>
+				<li><a href="http://www.jvmhost.com/articles/increase-tomcat-logging-verbosity-quick-problem-resolution" title="Increasing Tomcat logging verbosity for quick problem resolution">Increasing Tomcat logging verbosity for quick problem resolution</a></li>
+				</ul>
+		</li><li id="recent-comments-2" class="widget-container widget_recent_comments"><h3 class="widget-title">Recent Comments</h3><ul id="recentcomments"><li class="recentcomments">Jitendra on <a href="http://www.jvmhost.com/articles/grails-hosting-demistified-with-simple-database-application#comment-172">Grails &#8211; development and hosting of simple database application demistified with JVM Host</a></li><li class="recentcomments">admin on <a href="http://www.jvmhost.com/articles/how-to-run-cyclos-on-tomcat#comment-50">Running Cyclos on Tomcat at JVM Host</a></li><li class="recentcomments">Ricardo on <a href="http://www.jvmhost.com/articles/java-and-timezones#comment-48">How to use timezones with Java Virtual Machine?</a></li><li class="recentcomments"><a href='http://da2k.com.br' rel='external nofollow' class='url'>Fernando</a> on <a href="http://www.jvmhost.com/articles/install-node-js-cpanel-shared-account#comment-36">Install node.js on a cPanel based shared hosting account</a></li><li class="recentcomments">barramundi on <a href="http://www.jvmhost.com/articles/using_native_apr_ajp_with_jboss_7#comment-34">JBoss 7: enabling APR support and AJP connector</a></li></ul></li><li id="archives-2" class="widget-container widget_archive"><h3 class="widget-title">Archives</h3>		<ul>
+			<li><a href='http://www.jvmhost.com/articles/2013/02' title='February 2013'>February 2013</a></li>
+	<li><a href='http://www.jvmhost.com/articles/2012/11' title='November 2012'>November 2012</a></li>
+	<li><a href='http://www.jvmhost.com/articles/2012/10' title='October 2012'>October 2012</a></li>
+	<li><a href='http://www.jvmhost.com/articles/2012/09' title='September 2012'>September 2012</a></li>
+	<li><a href='http://www.jvmhost.com/articles/2012/08' title='August 2012'>August 2012</a></li>
+	<li><a href='http://www.jvmhost.com/articles/2012/07' title='July 2012'>July 2012</a></li>
+	<li><a href='http://www.jvmhost.com/articles/2012/06' title='June 2012'>June 2012</a></li>
+	<li><a href='http://www.jvmhost.com/articles/2012/05' title='May 2012'>May 2012</a></li>
+	<li><a href='http://www.jvmhost.com/articles/2012/04' title='April 2012'>April 2012</a></li>
+	<li><a href='http://www.jvmhost.com/articles/2012/03' title='March 2012'>March 2012</a></li>
+	<li><a href='http://www.jvmhost.com/articles/2012/02' title='February 2012'>February 2012</a></li>
+	<li><a href='http://www.jvmhost.com/articles/2012/01' title='January 2012'>January 2012</a></li>
+	<li><a href='http://www.jvmhost.com/articles/2011/12' title='December 2011'>December 2011</a></li>
+	<li><a href='http://www.jvmhost.com/articles/2011/11' title='November 2011'>November 2011</a></li>
+	<li><a href='http://www.jvmhost.com/articles/2011/10' title='October 2011'>October 2011</a></li>
+	<li><a href='http://www.jvmhost.com/articles/2011/09' title='September 2011'>September 2011</a></li>
+		</ul>
+</li><li id="categories-2" class="widget-container widget_categories"><h3 class="widget-title">Categories</h3>		<ul>
+	<li class="cat-item cat-item-6"><a href="http://www.jvmhost.com/articles/category/control-panels" title="View all posts filed under Control Panels">Control Panels</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="http://www.jvmhost.com/articles/category/databases" title="View all posts filed under Databases">Databases</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="http://www.jvmhost.com/articles/category/dedicated-server" title="View all posts filed under Dedicated Server">Dedicated Server</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://www.jvmhost.com/articles/category/java" title="View all posts filed under Java">Java</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="http://www.jvmhost.com/articles/category/jboss" title="View all posts filed under JBoss">JBoss</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="http://www.jvmhost.com/articles/category/non-java" title="View all posts filed under Non-Java">Non-Java</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="http://www.jvmhost.com/articles/category/phpperlpython" title="View all posts filed under PHP/Perl/Python">PHP/Perl/Python</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="http://www.jvmhost.com/articles/category/tomcat" title="View all posts filed under Tomcat">Tomcat</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="http://www.jvmhost.com/articles/category/vps" title="View all posts filed under VPS">VPS</a>
+</li>
+		</ul>
+</li><li id="meta-2" class="widget-container widget_meta"><h3 class="widget-title">Meta</h3>			<ul>
+			<li><a rel="nofollow" href="http://blog.jvmhost.com/articles/wp-login.php?action=register">Register</a></li>			<li><a rel="nofollow" href="http://blog.jvmhost.com/articles/wp-login.php">Log in</a></li>
+			<li><a href="http://www.jvmhost.com/articles/feed" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://www.jvmhost.com/articles/comments/feed" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>
+						</ul>
+</li>			</ul>
+		</div><!-- #primary .widget-area -->
+
+	</div><!-- #main -->
+
+	<div id="footer" role="contentinfo">
+<!--		<div id="colophon"> -->
+
+	<div id="si_stopka">
+	    <a href="/page/terms-of-service/">Terms of Service</a><span style="color:black">
+	    *
+	    </span><a href="/page/privacy-policy/">Privacy Policy</a><span style="color:black">
+	    *
+	    </span><a href="/page/acceptable-use-policy/">Acceptable Use Policy</a>
+	    <br /><span class="copyright">&copy; 2010 JVMHost.com All rights are reserved.</span>
+	</div>
+
+	    
+	    <!-- Google Code for JH_viewpage Conversion Page -->
+	    <script type="text/javascript">
+	    /* <![CDATA[ */
+	    var google_conversion_id = 967528018;
+	    var google_conversion_language = "en";
+	    var google_conversion_format = "2";
+	    var google_conversion_color = "ffffff";
+	    var google_conversion_label = "uGA9CNbG2AIQ0pytzQM";
+	    var google_conversion_value = 0;
+	    /* ]]> */
+	    </script>
+	    <script type="text/javascript" src="http://www.googleadservices.com/pagead/conversion.js">
+	    </script>
+	    <noscript>
+	    <div style="display:inline;">
+	    <img height="1" width="1" style="border-style:none;" alt="" src="http://www.googleadservices.com/pagead/conversion/967528018/?label=uGA9CNbG2AIQ0pytzQM&amp;guid=ON&amp;script=0"/>
+	    </div>
+	    </noscript>
+	    <!-- 344f67ce8fa92898d1e944ae6249fc1d -->
+
+
+
+
+<!--		</div>--><!-- #colophon -->
+	</div><!-- #footer -->
+
+</div><!-- #wrapper -->
+
+<img src="http://blog.jvmhost.com/articles/wp-content/plugins/cookies-for-comments/css.php?k=a7dd951e59223b90243007504cd199d9&amp;o=i&amp;t=1541849466" width='1' height='1' /><script type="text/javascript">
+
+var addthis_config = {"data_track_clickback":false,"data_track_addressbar":false,"data_track_textcopy":false,"ui_atversion":"300"};
+var addthis_product = 'wpp-3.0.2';
+</script><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=d0b2d02f94a778a1efd512b9ea3b519a"></script><script type="text/javascript"></script><!--wp_footer--></body>
+</html>
+
+<!-- Performance optimized by W3 Total Cache. Learn more: http://www.w3-edge.com/wordpress-plugins/
+
+Page Caching using disk: enhanced
+
+Served from: blog.jvmhost.com @ 2013-02-03 21:09:36 -->

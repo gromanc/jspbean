@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component inherit-compiler-output="true">
+	<output-test url="file://$MODULE_DIR$/out/test/jspbean"/>
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$"/>
+	<lib name="D:\Workspaces\tests\jspbean\lib\mysql5\mysql-connector-java-5.0.4-bin.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/mysql5/mysql-connector-java-5.0.4-bin.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\hibernate33\antlr-2.7.6.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/hibernate33/antlr-2.7.6.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\hibernate33\c3p0-0.9.1.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/hibernate33/c3p0-0.9.1.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\hibernate33\cglib-2.2.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/hibernate33/cglib-2.2.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\hibernate33\dom4j-1.6.1.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/hibernate33/dom4j-1.6.1.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\hibernate33\ehcache-1.2.3.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/hibernate33/ehcache-1.2.3.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\hibernate33\ejb3-persistence.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/hibernate33/ejb3-persistence.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\hibernate33\hibernate-annotations.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/hibernate33/hibernate-annotations.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\hibernate33\hibernate-commons-annotations.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/hibernate33/hibernate-commons-annotations.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\hibernate33\hibernate-entitymanager.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/hibernate33/hibernate-entitymanager.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\hibernate33\hibernate-validator.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/hibernate33/hibernate-validator.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\hibernate33\hibernate3.jar" scope="COMPILE">
+		<srcroot url="file://$MODULE_DIR$/../../hibernate/hibernate-3.3.2/project/core/src/main/java"/>
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/hibernate33/hibernate3.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\hibernate33\javassist-3.9.0.GA.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/hibernate33/javassist-3.9.0.GA.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\hibernate33\jboss-cache-1.4.1.GA.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/hibernate33/jboss-cache-1.4.1.GA.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\hibernate33\jbosscache-core-3.1.0.GA.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/hibernate33/jbosscache-core-3.1.0.GA.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\hibernate33\jta-1.1.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/hibernate33/jta-1.1.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\hibernate33\log4j-1.2.14.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/hibernate33/log4j-1.2.14.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\hibernate33\oscache-2.1.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/hibernate33/oscache-2.1.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\hibernate33\proxool-0.8.3.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/hibernate33/proxool-0.8.3.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\hibernate33\slf4j-api-1.5.8.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/hibernate33/slf4j-api-1.5.8.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\hibernate33\slf4j-log4j12-1.5.8.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/hibernate33/slf4j-log4j12-1.5.8.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\hibernate33\swarmcache-1.0RC2.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/hibernate33/swarmcache-1.0RC2.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\struts221\core\aopalliance-1.0.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/struts221/core/aopalliance-1.0.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\struts221\core\classworlds-1.1.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/struts221/core/classworlds-1.1.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\struts221\core\commons-beanutils-1.7.0.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/struts221/core/commons-beanutils-1.7.0.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\struts221\core\commons-chain-1.2.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/struts221/core/commons-chain-1.2.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\struts221\core\commons-collections-3.2.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/struts221/core/commons-collections-3.2.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\struts221\core\commons-digester-2.0.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/struts221/core/commons-digester-2.0.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\struts221\core\commons-fileupload-1.2.1.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/struts221/core/commons-fileupload-1.2.1.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\struts221\core\commons-io-1.3.2.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/struts221/core/commons-io-1.3.2.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\struts221\core\commons-lang-2.3.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/struts221/core/commons-lang-2.3.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\struts221\core\commons-logging-api-1.1.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/struts221/core/commons-logging-api-1.1.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\struts221\core\commons-validator-1.3.1.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/struts221/core/commons-validator-1.3.1.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\struts221\core\freemarker-2.3.16.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/struts221/core/freemarker-2.3.16.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\struts221\core\json-lib-2.1-jdk15.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/struts221/core/json-lib-2.1-jdk15.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\struts221\core\ognl-3.0.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/struts221/core/ognl-3.0.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\struts221\core\oro-2.0.8.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/struts221/core/oro-2.0.8.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\struts221\core\sslext-1.2-0.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/struts221/core/sslext-1.2-0.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\struts221\core\struts2-convention-plugin-2.2.1.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/struts221/core/struts2-convention-plugin-2.2.1.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\struts221\core\struts2-core-2.2.1.jar" scope="COMPILE">
+		<srcroot url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/apps/blank/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/apps/blank/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/apps/mailreader/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/apps/portlet/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/apps/portlet/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/apps/rest-showcase/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/apps/rest-showcase/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/apps/showcase/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/apps/showcase/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/core/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/core/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/codebehind/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/codebehind/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/config-browser/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/convention/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/convention/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/dojo/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/dojo/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/dwr/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/embeddedjsp/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/embeddedjsp/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/gxp/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/jasperreports/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/javatemplates/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/javatemplates/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/jfreechart/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/jfreechart/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/jsf/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/json/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/json/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/junit/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/junit/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/osgi/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/osgi/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/oval/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/oval/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/pell-multipart/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/plexus/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/portlet/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/portlet/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/rest/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/rest/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/sitegraph/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/sitegraph/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/sitemesh/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/spring/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/spring/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/struts1/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/struts1/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/testng/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/testng/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/tiles/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/xwork-core/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/xwork-core/src/test/java"/>
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/struts221/core/struts2-core-2.2.1.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\struts221\core\struts2-embeddedjsp-plugin-2.2.1.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/struts221/core/struts2-embeddedjsp-plugin-2.2.1.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\struts221\core\struts2-json-plugin-2.2.1.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/struts221/core/struts2-json-plugin-2.2.1.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\struts221\core\xwork-core-2.2.1.jar" scope="COMPILE">
+		<srcroot url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/apps/blank/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/apps/blank/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/apps/mailreader/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/apps/portlet/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/apps/portlet/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/apps/rest-showcase/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/apps/rest-showcase/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/apps/showcase/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/apps/showcase/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/core/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/core/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/codebehind/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/codebehind/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/config-browser/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/convention/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/convention/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/dojo/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/dojo/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/dwr/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/embeddedjsp/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/embeddedjsp/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/gxp/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/jasperreports/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/javatemplates/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/javatemplates/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/jfreechart/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/jfreechart/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/jsf/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/json/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/json/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/junit/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/junit/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/osgi/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/osgi/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/oval/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/oval/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/pell-multipart/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/plexus/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/portlet/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/portlet/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/rest/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/rest/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/sitegraph/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/sitegraph/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/sitemesh/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/spring/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/spring/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/struts1/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/struts1/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/testng/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/testng/src/test/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/plugins/tiles/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/xwork-core/src/main/java"/>
+		<srcroot bind="false" url="file://$MODULE_DIR$/../../struts2/struts-2.2.1/src/xwork-core/src/test/java"/>
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/struts221/core/xwork-core-2.2.1.jar!/"/>
+	</lib>
+	<lib name="D:\Workspaces\tests\jspbean\lib\struts221\core\commons-logging-1.0.4.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/struts221/core/commons-logging-1.0.4.jar!/"/>
+	</lib>
+	<lib name="C:\Program Files\JetBrains\IntelliJ IDEA 11.1.3\lib\junit-4.10.jar" scope="PROVIDED"/>
+</component>

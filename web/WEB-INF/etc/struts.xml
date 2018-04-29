@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<constant name="struts.devMode" value="true" />
+	<!--<constant name="struts.convention.action.disableScanning" value="true" />-->
+
+  <constant name="struts.custom.i18n.resources" value="jspbean/struts/resources/MessageResources"/>
+  <constant name="struts.i18n.encoding" value="UTF-8"/>
+  <constant name="struts.action.extension" value=",,action"/>
+  <!--<constant name="struts.ui.theme" value="simple"/>-->
+  <constant name="struts.serve.static" value="true" />
+  <constant name="struts.serve.static.browserCache" value="false" />
+  <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+  <constant name="struts.mapper.action.prefix.enabled" value="true"/>
+  <!--<constant name="struts.debug" value="true" />-->
+  <constant name="struts.ognl.allowStaticMethodAccess" value="true" />
+  <!--<constant name="struts.ognl.enableOGNLEvalExpression" value="false" />-->
+
+  <constant name="struts.enable.SlashesInActionNames" value="true"/>
+  <constant name="struts.mapper.alwaysSelectFullNamespace" value="false"/>
+  <!--<constant name="struts.patternMatcher" value="regex"/>-->
+
+  <constant name="struts.action.excludePattern" value="/rest/.*,/simple/?.*,/webSocket,(?!/?Hello.*).*\.do,/pages/.*"/>
+  <!--<constant name="struts.objectTypeDeterminer" value="tiger"/>-->
+  <constant name="struts.convention.default.parent.package" value="default.package"/>
+  <!--<constant name="struts.convention.action.packages" value="jspbean.*"/>-->
+  <constant name="struts.convention.package.locators.basePackage" value="jspbean.struts"/>
+  <constant name="struts.convention.package.locators" value="jspbean,struts"/>
+
+  <constant name="struts.actionProxyFactory" value="jspbean.struts.factory.MyActionProxyFactory"/>
+  <constant name="jspbean.par1" value="true"/>
+
+  <bean class="jspbean.struts.Session" scope="default"/>
+  <!--<bean type="com.opensymphony.xwork2.config.PackageProvider" name="myBean" class="jspbean.struts.MyBean" />-->
+
+  <constant name="struts.xworkTextProvider" value="jspbean.struts.text.MyTextProvier"/>
+
+	<package name="default.package" extends="json-default">
+    <result-types>
+      <result-type name="dispatcher" default="true"
+                    class="jspbean.struts.results.MyServletDispatcherResult" />
+    </result-types>
+		<!-- setup the default-stack exception mapping interceptor so that any
+			exceptions not caught by this application will be logged and then handled 
+			by the global exception mapping -->
+    <interceptors>
+       <interceptor name="authentication" class="jspbean.struts.interceptor.AuthenticationInterceptor">
+         <param name="par1">${par1}</param>
+         <param name="par2">${par1}</param>
+       </interceptor>
+      <interceptor-stack name="appDefaultStack">
+        <interceptor-ref name="authentication">
+          <param name="interceptorConfigs.par2">${frob12}</param>
+        </interceptor-ref>
+        <interceptor-ref name="defaultStack">
+          <param name="exception.logEnabled">true</param>
+          <param name="exception.logLevel">ERROR</param>
+        </interceptor-ref>
+      </interceptor-stack>
+
+      <interceptor-stack name="validateWorkflowStack">
+        <interceptor-ref name="basicStack">
+          <param name="exception.logEnabled">true</param>
+          <param name="exception.logLevel">ERROR</param>
+        </interceptor-ref>
+        <interceptor-ref name="validation">
+          <param name="excludeMethods">input,back,cancel,browse</param>
+        </interceptor-ref>
+        <interceptor-ref name="workflow"/>
+      </interceptor-stack>
+
+    </interceptors>
+
+    <default-interceptor-ref name="appDefaultStack" />
+
+		<global-results>
+			<result name="error">/error_page.jsp</result>
+		</global-results>
+
+
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception"	result="error" />
+		</global-exception-mappings>
+
+	</package>
+
+  <package name="root" namespace="/" extends="default.package">
+
+    <action name="getQuery"  class="jspbean.struts.CallableDemo" method="execute">
+      <interceptor-ref name="defaultStack">
+        <param name="staticParams.parse">true</param>
+        <param name="staticParams.overwrite">false</param>
+      </interceptor-ref>
+      <param name="num">${numValue}</param>
+    <result name="showlinks">result.jsp</result>
+    </action>
+    <action name="emptyRoot" class="jspbean.struts.JsonSample"><result type="json"><param name="root"></param> </result></action>
+
+    <action name="" class="jspbean.struts.DefaultAction">
+      <interceptor-ref name="appDefaultStack">
+        <param name="authentication.interceptorConfigs.par3">${frob12}</param>
+      </interceptor-ref>
+  		<result>/default.jsp</result>
+    </action>
+
+    <!--<action name="upload" class="jspbean.struts.FileUploadAction">-->
+        <!--<result name="input">fileupload.jsp</result>-->
+        <!--<result type="redirect">fileupload.jsp</result>-->
+  	<!--</action>-->
+    <!--<action name="register">-->
+       <!--<result>/pages/register.jsp</result>-->
+    <!--</action>-->
+    <!--<action name="forgot-password">-->
+       <!--<result>/pages/forgotPassword.jsp</result>-->
+    <!--</action>-->
+    <action name="showAjaxLoginForm">
+
+       <result>/pages/ajaxlogin.jsp</result>
+    </action>
+    <!--<action name="ajaxLogin" class="jspbean.struts.LoginAction">-->
+       <!--<result name="input">/pages/ajaxlogin.jsp</result>-->
+       <!--<result name="error">/pages/ajaxResult.jsp</result>-->
+       <!--<result>/pages/ajaxloginsuccess.jsp</result>-->
+    <!--</action>-->
+    <action name="pubsub">
+      <result>/pages/pubsub.jsp</result>
+    </action>
+
+    <!--<action name="{name}" class="jspbean.struts.DefaultAction"><result>${name}.jsp</result> </action>-->
+
+    <action name="/partner/*/*">
+      <result name="success">
+        /pages/multiselect.jsp
+      </result>
+    </action>
+
+    <action name="test2" class="jspbean.struts.DefaultAction">
+      <result name="success" type="redirect">
+        <param name="location">http://localhost:8080/jspbean/</param>
+        <param name="frob12">testValue</param>
+      </result>
+    </action>
+
+    <action name="actDefault" class="jspbean.struts.Act" method="execute">
+      <result name="success">
+        <param name="location">de + ${object} + lt.jsp</param>
+      </result>
+    </action>
+
+    <action name="actModelDriven" class="jspbean.struts.Act" method="execute">
+      <result name="success" type="redirectAction">
+        <param name="actionName">model + ${object}</param>
+      </result>
+    </action>
+
+  </package>
+
+  <!--<package name="admin" namespace="/admin" extends="default">-->
+      <!--<global-results>-->
+         <!--<result>/result.jsp</result>-->
+      <!--</global-results>-->
+
+      <!--<action name="login" class="jspbean.struts.AdminAction">-->
+         <!--<result>/admin.jsp</result>-->
+      <!--</action>-->
+      <!--<action name="*_*" class="jspbean.struts.{1}Action" method="{2}">-->
+      <!--</action>-->
+  <!--</package>-->
+
+  <!--<package name="error" namespace="" extends="default">-->
+     <!--<action name="**" >-->
+       <!--<result>/error_page.jsp</result>-->
+     <!--</action>-->
+  <!--</package>-->
+
+  <include file="../etc/struts-model-driven.xml" />
+
+  <bean type="com.opensymphony.xwork2.UnknownHandler" name="handler" class="jspbean.struts.handler.MyUnknownHandler"/>
+  <unknown-handler-stack>
+    <unknown-handler-ref name="handler"/>
+  </unknown-handler-stack>
+
+</struts>

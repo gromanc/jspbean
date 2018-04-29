@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="hibernate33">
+    <archive path="D:/Workspaces/tests/jspbean/lib/hibernate33/antlr-2.7.6.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/hibernate33/c3p0-0.9.1.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/hibernate33/cglib-2.2.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/hibernate33/commons-collections-3.1.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/hibernate33/dom4j-1.6.1.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/hibernate33/ehcache-1.2.3.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/hibernate33/ejb3-persistence.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/hibernate33/hibernate-annotations.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/hibernate33/hibernate-commons-annotations.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/hibernate33/hibernate-entitymanager.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/hibernate33/hibernate-validator.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/hibernate33/hibernate3.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/hibernate33/javassist-3.9.0.GA.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/hibernate33/jboss-cache-1.4.1.GA.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/hibernate33/jbosscache-core-3.1.0.GA.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/hibernate33/jta-1.1.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/hibernate33/log4j-1.2.14.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/hibernate33/oscache-2.1.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/hibernate33/proxool-0.8.3.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/hibernate33/slf4j-api-1.5.8.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/hibernate33/slf4j-log4j12-1.5.8.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/hibernate33/swarmcache-1.0RC2.jar" />
+  </library>
+  <library name="struts221">
+    <archive path="D:/Workspaces/tests/jspbean/lib/struts221/core/antlr-2.7.2.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/struts221/core/aopalliance-1.0.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/struts221/core/classworlds-1.1.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/struts221/core/commons-beanutils-1.7.0.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/struts221/core/commons-chain-1.2.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/struts221/core/commons-collections-3.2.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/struts221/core/commons-digester-2.0.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/struts221/core/commons-fileupload-1.2.1.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/struts221/core/commons-io-1.3.2.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/struts221/core/commons-lang-2.3.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/struts221/core/commons-logging-1.0.4.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/struts221/core/commons-logging-api-1.1.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/struts221/core/commons-validator-1.3.1.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/struts221/core/freemarker-2.3.16.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/struts221/core/javassist-3.7.ga.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/struts221/core/json-lib-2.1-jdk15.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/struts221/core/ognl-3.0.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/struts221/core/oro-2.0.8.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/struts221/core/sslext-1.2-0.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/struts221/core/struts2-convention-plugin-2.2.1.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/struts221/core/struts2-core-2.2.1.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/struts221/core/struts2-embeddedjsp-plugin-2.2.1.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/struts221/core/struts2-json-plugin-2.2.1.jar" />
+    <archive path="D:/Workspaces/tests/jspbean/lib/struts221/core/xwork-core-2.2.1.jar" />
+  </library>
+</eclipse-userlibraries>
+

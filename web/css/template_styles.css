@@ -1,0 +1,126 @@
+/* Default CSS */
+* {padding:0; margin:0; font-size:100%; border-collapse:collapse;}
+
+HTML, BODY {height:100%; background:#eae9e5;}
+
+BODY {color:#4f4f4f; font-family:Verdana, Arial, Helvetica, sans-serif;}
+TD, TH {vertical-align:top; text-align:left;}
+IMG {border:0;}
+      
+P {font-size:1.2em; margin-bottom:15px; line-height:1.3em;}
+P P {font-size:1em;}
+
+H1, H2, H3, H4, H5, H6, .tbldesigned CAPTION {padding:15px 0; color:#ff9900;}
+H1 {font-size:1.4em; font-weight:lighter; text-transform:uppercase;}
+H2 {font-size:1.4em; font-weight:lighter;}
+H3 {font-size:1.3em; font-weight:bold;}
+H4 {font-size:1.3em; font-weight:bold;}
+H5 {font-size:1.2em; font-weight:bold; color:#999;}
+H6, .tbldesigned CAPTION {text-align:left; font-size:1.2em; font-weight:bold; font-style:italic;}
+H1 A, H2 A, H3 A, H4 A, H5 A, H6 A {color:#ff9900;}
+.glob {border-bottom:2px solid #f19705; padding:3px 15px; font-size:1.2em; font-weight:bold; text-transform:uppercase;}
+.poeben {position:absolute; margin:3px 0 0 -63px; height:81px; width:75px; background:url(images/h/poeben.gif) no-repeat bottom left;}
+.star {height:40px; padding:11px 0 0 40px; background:url(images/h/star.gif) no-repeat; text-transform:uppercase;}
+.ten {height:34px; padding:15px 0 0 40px; background:url(images/h/10.gif) no-repeat; text-transform:uppercase;}
+.voting {height:42px; padding:27px 0 0 40px; background:url(images/h/voting.gif) no-repeat; text-transform:uppercase;}
+.butterfly {height:40px; padding:10px 0 0 40px; background:url(images/h/butterfly.gif) no-repeat; text-transform:uppercase;}
+
+A {color: #006699; text-decoration: underline;}
+A:hover, A IMG {text-decoration:none;}
+
+UL, OL {margin:0 0 15px; font:1.2em Tahoma;}
+UL LI {list-style:none; padding:0 0 9px 10px; background:url(images/icons/orangearrow.gif) no-repeat 0 5px; line-height:1.3em;}
+LI UL {font-size:1em; margin:6px 0 7px !important;}
+OL LI {margin:0 0 0 18px; line-height:1.3em; margin-bottom:10px;}
+
+CITE {display:block; padding:5px 0; font-size:1.2em; color:#6a6f71; font-style:italic;}
+BLOCKQUOTE {padding:0 0 15px 15px; font-size:1.2em;}
+
+HR {border:1px solid #737373; margin:15px 0px 15px 0px;}
+
+DIV.spacer {font-size:0; line-height:0px; margin:0px; padding:0px; background:transparent; border:none; display:block; visibility:hidden; clear:both;}
+
+/* Extended CSS */
+.maintab {height:100%; width:100%;  }
+
+.header {height:55px;  color:#FFF;}
+.header A {color:#FFF;}
+
+.userinfo {float:right; padding:15px 10px 6px 25px;  font-size:1.2em; white-space:nowrap;}
+.userinfo A {margin-right:7px;}
+.authpanel{display:none; position:absolute; top:57px; right:10px; width:210px;}
+.authpanel2{display:block; position:absolute; top:57px; right:10px; width:210px;}
+.topauth {height:10px;  font-size:0;}
+.botauth {height:10px;  font-size:0;}
+.authform {padding:6px 10px; background:#f29400; color:#FFF;}
+.authform A {color:#FFF;}
+.authform TD INPUT {width:100px; margin:0 0 3px 0;}
+.close {float:right; margin:-6px 4px 0 0;}
+.close IMG {cursor:pointer;}
+.out {height:7px; width:7px; padding-bottom:7px;}
+
+.menu {padding:30px 10px 0 10px; font:1.2em Tahoma; font-weight:bold;}
+.menu SPAN {border-right:2px solid #FFF; padding:0 10px 0 6px;}
+.town {padding-left:12px !important; background:url(images/icons/arrowdown.gif) no-repeat 0 7px; text-decoration:underline; cursor:pointer;}
+.city {position:absolute; top:57px; left:10px; width:60px; padding:6px 10px; background:#f29400; color:#FFF; display:none;}
+.city UL {margin-bottom:0; font-size:1.1em;}
+.city LI {list-style:none; padding-bottom:3px; background:url(images/icons/whitearrow.gif) no-repeat 0 5px;}
+
+.main {}
+
+.logo {padding:30px 0 15px 10px; font:1.1em Tahoma; color:#999;}
+.logo IMG {display:block;}
+
+.lc {padding:0 0 0 10px;}
+.lctext {padding:0 0 15px 40px;}
+
+.apsearch {padding:6px 10px 78px 10px; background:url(images/searchbg.jpg) no-repeat right bottom #0f5381; font-size:1.2em; color:#FFF;}
+.apsearch DIV {margin-bottom:3px;}
+.apsearch SELECT, .apsearch TABLE {margin-bottom:10px; width:100%;}
+.apsearch TABLE INPUT {width:90px; float:right;}
+.apsearch TH {padding-left:6px; font-weight:lighter;}
+.otdo {padding-bottom:9px; white-space:nowrap;}
+.otdo INPUT {width:88px; margin:0 1px;}
+
+.workarea {padding:10px 33px 51px 45px;}
+.workarea TABLE {font-size:1.2em;}
+.workarea TABLE TABLE {font-size:1em;}
+.workarea TEXTAREA {font-size:1.2em;}
+
+.object {padding:15px 0 36px 3px; font-size:1.2em; background:url(images/hr.jpg) no-repeat left bottom; line-height:1.2em;}
+.object H3 {padding:5px 0; font-size:1.1em;}
+A.ttl {display:block; font-weight:bold;}
+
+.mphoto IMG, .minimg {margin:4px 4px 0 0; height:70px; border:1px solid #CCC; padding:3px; background:#FFF; vertical-align:top;}
+
+.lfm {margin-bottom:9px;}
+.lfm SPAN {display:block; color:#999; font-size:0.8em;}
+.lfm A {font-size:1.1em; font-weight:bold;}
+
+.data-table {width:100%; margin-bottom:30px;}
+.data-table TBODY TD {padding:5px 5px 10px 5px; border-bottom:1px dotted #3e3e3e;}
+.data-table TFOOT TD {padding:21px 5px;}
+.data-table INPUT, .data-table TEXTAREA {width:237px;}
+.data-table SELECT {width:240px;}
+.data-table LABEL INPUT {width:10px;}
+.data-table SPAN {color:#FF0000;}
+
+.metro TH {padding:1px 30px 1px 0; font-weight:bold;}
+.metro TD {padding:1px;}
+
+.graph-bar {margin-bottom:5px;}
+
+.formtbl TD {padding:0 15px 10px 0;}
+
+.search-tags-cloud {margin-bottom:15px;}
+
+.voting-form-box {font-size:1.1em;}
+
+div.forum-reply-field-text textarea {font-size:13px !important;}
+
+#printer {float:right; background:url(images/printer.gif) left center no-repeat; padding-left:16px;}
+
+.no {font-size:1em;}
+.no strong {font-weight:lighter;}
+
+.rambler {display:none;}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!--<package name="modelDriven" extends="struts-default" namespace="/modelDriven">-->
+        <!--&lt;!&ndash; Diplay entry page that uses Model-Driven technique &ndash;&gt;-->
+        <!--<action name="modelDriven" class="jspbean.struts.modelDriven.ModelDrivenAction" method="input">-->
+            <!--<result>modelDriven.jsp</result>-->
+        <!--</action>-->
+
+        <!--&lt;!&ndash; Display the result page whose content is populated using the Model-Driven technique &ndash;&gt;-->
+        <!--<action name="modelDrivenResult" class="jspbean.struts.modelDriven.ModelDrivenAction">-->
+          <!--&lt;!&ndash;<param name="aliases">#{'userName':'name','userAge':'age'}</param>&ndash;&gt;-->
+          <!--<interceptor-ref name="defaultStack">-->
+            <!--<param name="params.acceptParamNames">(\[1\]\.)*name</param>-->
+          <!--</interceptor-ref>-->
+          <!--&lt;!&ndash;<interceptor-ref name="alias"/>&ndash;&gt;-->
+		  <!--<result>modelDrivenResult.jsp</result>-->
+		<!--</action>-->
+	<!--</package>-->
+</struts>	
+	

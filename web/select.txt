@@ -1,0 +1,13 @@
+<s:a href="#" id="remoteurl7">GET Int Array</s:a>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#remoteurl7").click(function(){
+    var intArray= [2, 10, 1];
+    alert($.param({intArray : intArray}, true));
+    $.get("<s:url action="doGetIntArray"/>", $.param({intArray : intArray}, true), function(response) {
+            var result= response;
+            alert(JSON.stringify(result));
+           }, "JSON");
+  });
+});
+</script>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Context crossContext="true" >
+
+  <!-- Default set of monitored resources -->
+  <!--
+  <WatchedResource>WEB-INF/web.xml</WatchedResource>
+
+  <Resource name="jdbc/jspbean" auth="Container" type="javax.sql.DataSource"
+            factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+            maxActive="50" maxIdle="30" maxWait="10000"
+            username="jspbean" password="jspbean"
+            driverClassName="org.apache.derby.jdbc.ClientDriver"
+            url="jdbc:derby://localhost:1527/jspbean"/>
+ -->
+</Context>
